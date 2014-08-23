@@ -9,10 +9,16 @@
 /* Begin PBXBuildFile section */
 		03280DD719A1842500A67AC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280DD619A1842500A67AC0 /* AppDelegate.swift */; };
 		03280DDA19A1842600A67AC0 /* MessagePosting.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03280DD819A1842600A67AC0 /* MessagePosting.xcdatamodeld */; };
-		03280DDC19A1842600A67AC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280DDB19A1842600A67AC0 /* ViewController.swift */; };
 		03280DDF19A1842600A67AC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03280DDD19A1842600A67AC0 /* Main.storyboard */; };
 		03280DE119A1842600A67AC0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03280DE019A1842600A67AC0 /* Images.xcassets */; };
 		03280DED19A1842600A67AC0 /* MessagePostingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280DEC19A1842600A67AC0 /* MessagePostingTests.swift */; };
+		03280DF919A1898D00A67AC0 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280DF819A1898D00A67AC0 /* CreatePostViewController.swift */; };
+		03280DFB19A189AB00A67AC0 /* ViewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280DFA19A189AB00A67AC0 /* ViewPostViewController.swift */; };
+		03280DFD19A189CD00A67AC0 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280DFC19A189CD00A67AC0 /* PostsTableViewController.swift */; };
+		03280DFF19A1B47D00A67AC0 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280DFE19A1B47D00A67AC0 /* PostTableViewCell.swift */; };
+		03280E0119A1B63E00A67AC0 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280E0019A1B63E00A67AC0 /* Post.swift */; };
+		03280E0319A1B63F00A67AC0 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280E0219A1B63F00A67AC0 /* Comment.swift */; };
+		03280E0819A3086600A67AC0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 03280E0719A3086600A67AC0 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,12 +36,18 @@
 		03280DD519A1842500A67AC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03280DD619A1842500A67AC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03280DD919A1842600A67AC0 /* MessagePosting.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MessagePosting.xcdatamodel; sourceTree = "<group>"; };
-		03280DDB19A1842600A67AC0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		03280DDE19A1842600A67AC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03280DE019A1842600A67AC0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		03280DE619A1842600A67AC0 /* MessagePostingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessagePostingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03280DEB19A1842600A67AC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03280DEC19A1842600A67AC0 /* MessagePostingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePostingTests.swift; sourceTree = "<group>"; };
+		03280DF819A1898D00A67AC0 /* CreatePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
+		03280DFA19A189AB00A67AC0 /* ViewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPostViewController.swift; sourceTree = "<group>"; };
+		03280DFC19A189CD00A67AC0 /* PostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
+		03280DFE19A1B47D00A67AC0 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		03280E0019A1B63E00A67AC0 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		03280E0219A1B63F00A67AC0 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		03280E0719A3086600A67AC0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +71,7 @@
 		03280DC819A1842500A67AC0 = {
 			isa = PBXGroup;
 			children = (
+				03280E0719A3086600A67AC0 /* README.md */,
 				03280DD319A1842500A67AC0 /* MessagePosting */,
 				03280DE919A1842600A67AC0 /* MessagePostingTests */,
 				03280DD219A1842500A67AC0 /* Products */,
@@ -78,10 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				03280DD619A1842500A67AC0 /* AppDelegate.swift */,
-				03280DDB19A1842600A67AC0 /* ViewController.swift */,
-				03280DDD19A1842600A67AC0 /* Main.storyboard */,
-				03280DE019A1842600A67AC0 /* Images.xcassets */,
-				03280DD819A1842600A67AC0 /* MessagePosting.xcdatamodeld */,
+				03280DF719A1843C00A67AC0 /* UI */,
+				03280DF619A1842D00A67AC0 /* CoreData */,
 				03280DD419A1842500A67AC0 /* Supporting Files */,
 			);
 			path = MessagePosting;
@@ -90,6 +101,7 @@
 		03280DD419A1842500A67AC0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				03280DE019A1842600A67AC0 /* Images.xcassets */,
 				03280DD519A1842500A67AC0 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +122,28 @@
 				03280DEB19A1842600A67AC0 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		03280DF619A1842D00A67AC0 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				03280DD819A1842600A67AC0 /* MessagePosting.xcdatamodeld */,
+				03280E0219A1B63F00A67AC0 /* Comment.swift */,
+				03280E0019A1B63E00A67AC0 /* Post.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		03280DF719A1843C00A67AC0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				03280DDD19A1842600A67AC0 /* Main.storyboard */,
+				03280DFE19A1B47D00A67AC0 /* PostTableViewCell.swift */,
+				03280DF819A1898D00A67AC0 /* CreatePostViewController.swift */,
+				03280DFA19A189AB00A67AC0 /* ViewPostViewController.swift */,
+				03280DFC19A189CD00A67AC0 /* PostsTableViewController.swift */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,9 +245,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03280DDC19A1842600A67AC0 /* ViewController.swift in Sources */,
 				03280DDA19A1842600A67AC0 /* MessagePosting.xcdatamodeld in Sources */,
+				03280DF919A1898D00A67AC0 /* CreatePostViewController.swift in Sources */,
+				03280E0819A3086600A67AC0 /* README.md in Sources */,
 				03280DD719A1842500A67AC0 /* AppDelegate.swift in Sources */,
+				03280E0319A1B63F00A67AC0 /* Comment.swift in Sources */,
+				03280DFB19A189AB00A67AC0 /* ViewPostViewController.swift in Sources */,
+				03280DFD19A189CD00A67AC0 /* PostsTableViewController.swift in Sources */,
+				03280E0119A1B63E00A67AC0 /* Post.swift in Sources */,
+				03280DFF19A1B47D00A67AC0 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,9 +371,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MessagePosting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -342,6 +384,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MessagePosting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -401,6 +444,7 @@
 				03280DF219A1842600A67AC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03280DF319A1842600A67AC0 /* Build configuration list for PBXNativeTarget "MessagePostingTests" */ = {
 			isa = XCConfigurationList;
@@ -409,6 +453,7 @@
 				03280DF519A1842600A67AC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
