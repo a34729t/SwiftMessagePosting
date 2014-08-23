@@ -19,6 +19,7 @@
 		03280E0119A1B63E00A67AC0 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280E0019A1B63E00A67AC0 /* Post.swift */; };
 		03280E0319A1B63F00A67AC0 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280E0219A1B63F00A67AC0 /* Comment.swift */; };
 		03280E0819A3086600A67AC0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 03280E0719A3086600A67AC0 /* README.md */; };
+		03CF1E6019A90C8F009739F5 /* ViewPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CF1E5F19A90C8F009739F5 /* ViewPostTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		03280E0019A1B63E00A67AC0 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		03280E0219A1B63F00A67AC0 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		03280E0719A3086600A67AC0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		03CF1E5F19A90C8F009739F5 /* ViewPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPostTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,10 +140,11 @@
 			isa = PBXGroup;
 			children = (
 				03280DDD19A1842600A67AC0 /* Main.storyboard */,
-				03280DFE19A1B47D00A67AC0 /* PostTableViewCell.swift */,
 				03280DF819A1898D00A67AC0 /* CreatePostViewController.swift */,
-				03280DFA19A189AB00A67AC0 /* ViewPostViewController.swift */,
 				03280DFC19A189CD00A67AC0 /* PostsTableViewController.swift */,
+				03280DFE19A1B47D00A67AC0 /* PostTableViewCell.swift */,
+				03CF1E5F19A90C8F009739F5 /* ViewPostTableViewController.swift */,
+				03280DFA19A189AB00A67AC0 /* ViewPostViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				03280DF919A1898D00A67AC0 /* CreatePostViewController.swift in Sources */,
 				03280E0819A3086600A67AC0 /* README.md in Sources */,
 				03280DD719A1842500A67AC0 /* AppDelegate.swift in Sources */,
+				03CF1E6019A90C8F009739F5 /* ViewPostTableViewController.swift in Sources */,
 				03280E0319A1B63F00A67AC0 /* Comment.swift in Sources */,
 				03280DFB19A189AB00A67AC0 /* ViewPostViewController.swift in Sources */,
 				03280DFD19A189CD00A67AC0 /* PostsTableViewController.swift in Sources */,
