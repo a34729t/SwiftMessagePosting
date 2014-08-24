@@ -59,6 +59,7 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
         return false
     }
     
+    // TODO: remove this?
     override func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
             let managedObject:NSManagedObject = fetchedResultController.objectAtIndexPath(indexPath) as NSManagedObject

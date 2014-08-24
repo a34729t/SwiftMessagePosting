@@ -19,7 +19,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="YwK-8a-ZO5" kind="show" identifier="select" id="Ds8-MU-Rbd"/>
+                                    <segue destination="YwK-8a-ZO5" kind="show" identifier="select" id="pkJ-l2-RiL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -58,6 +58,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3W-MR-B9P">
+                                <rect key="frame" x="88" y="84" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vqm-ks-zEr">
                                 <rect key="frame" x="83" y="84" width="322" height="124"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -67,12 +73,6 @@
                                     <outlet property="delegate" destination="r8Z-mf-Ohk" id="C9p-eT-tnG"/>
                                 </connections>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3W-MR-B9P">
-                                <rect key="frame" x="88" y="84" width="45" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -91,58 +91,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Nl-cQ-XhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="743" y="76"/>
+            <point key="canvasLocation" x="743" y="82"/>
         </scene>
-        <!--View Post View Controller-->
-        <scene sceneID="oF1-N4-fej">
-            <objects>
-                <viewController id="37t-CT-EJL" customClass="ViewPostViewController" customModule="MessagePosting" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nlu-EO-Zdk"/>
-                        <viewControllerLayoutGuide type="bottom" id="Q2p-W0-wCH"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="r8P-0Z-EsE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ky-xz-qCx">
-                                <rect key="frame" x="34" y="87" width="322" height="124"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outlet property="delegate" destination="r8Z-mf-Ohk" id="M8Y-VQ-fCs"/>
-                                </connections>
-                            </textView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="b1y-yt-Z9s">
-                                <rect key="frame" x="45" y="250" width="300" height="300"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="PostCell" id="3LV-Yd-VVd" customClass="PostTableViewCell" customModule="MessagePosting" customModuleProvider="target">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3LV-Yd-VVd" id="r6W-iI-8Px">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="37t-CT-EJL" id="F2N-lN-cWB"/>
-                                    <outlet property="delegate" destination="37t-CT-EJL" id="UKA-hq-hyI"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="b1y-yt-Z9s" id="62Y-Bh-ER5"/>
-                        <outlet property="textView" destination="1ky-xz-qCx" id="svH-Tr-ute"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="guh-y9-Nqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="25" y="1168"/>
-        </scene>
-        <!--View Post Table View Controller-->
+        <!--...-->
         <scene sceneID="pWH-gT-auj">
             <objects>
                 <tableViewController id="YwK-8a-ZO5" customClass="ViewPostTableViewController" customModule="MessagePosting" customModuleProvider="target" sceneMemberID="viewController">
@@ -163,22 +114,76 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentEntryCell" id="Rmk-Vl-Dxe">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rmk-Vl-Dxe" id="aSL-QT-YPM">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="YwK-8a-ZO5" id="Coc-i9-dT5"/>
                             <outlet property="delegate" destination="YwK-8a-ZO5" id="rAv-HQ-aDj"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="..." id="3fB-pe-ClQ">
+                        <barButtonItem key="rightBarButtonItem" title="Comment" id="FAk-Wr-jCu">
+                            <connections>
+                                <segue destination="SFN-eH-E1U" kind="show" identifier="createcomment" id="PSK-TW-v0p"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6hw-Os-ckB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="743" y="736"/>
+            <point key="canvasLocation" x="743" y="738"/>
+        </scene>
+        <!--Got comment?-->
+        <scene sceneID="n5Z-O3-DGa">
+            <objects>
+                <viewController id="SFN-eH-E1U" customClass="CreateCommentViewController" customModule="MessagePosting" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nlV-Wj-l2n"/>
+                        <viewControllerLayoutGuide type="bottom" id="s4T-bV-sVc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yIi-1P-Wy7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="N characters left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWK-dn-U3S">
+                                <rect key="frame" x="26" y="223" width="127" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzq-fg-USZ">
+                                <rect key="frame" x="26" y="91" width="322" height="124"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="SFN-eH-E1U" id="zrr-Vr-YjX"/>
+                                </connections>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5h-1e-sJd">
+                                <rect key="frame" x="31" y="91" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Got comment?" id="2ut-yf-VXi">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="byx-ep-Al1">
+                            <connections>
+                                <action selector="done:" destination="SFN-eH-E1U" id="KS9-1B-Tic"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="placeholderTextLabel" destination="H5h-1e-sJd" id="51i-bX-7PC"/>
+                        <outlet property="textFieldLengthLabel" destination="TWK-dn-U3S" id="Oop-O0-hiz"/>
+                        <outlet property="textView" destination="xzq-fg-USZ" id="WJl-ur-aYL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xUA-LX-TMv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1405" y="738"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ufY-6N-JvW">

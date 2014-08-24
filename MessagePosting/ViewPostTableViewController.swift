@@ -18,16 +18,19 @@ class ViewPostTableViewController: UITableViewController, NSFetchedResultsContro
     
     let postViewCellIdentifier = "PostViewCell"
     let commentCellIdentifier = "CommentCell"
-    let commentEntryCellIdentifier = "CommentEntryCell"
+    
+    let lightGrey:UIColor = UIColor(white: 247/255, alpha: 1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        fetchedResultController = getFetchedResultController()
+        fetchedResultController.delegate = self
+        fetchedResultController.performFetch(nil)
+        
+        // i don't know why this weird .self construction is needed but it is
+        tableView.estimatedRowHeight=44.0
+        tableView.rowHeight=UITableViewAutomaticDimension
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +43,7 @@ class ViewPostTableViewController: UITableViewController, NSFetchedResultsContro
     override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 3
+        return 2
     }
 
     override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
@@ -49,74 +52,44 @@ class ViewPostTableViewController: UITableViewController, NSFetchedResultsContro
         switch section {
         case 0:
             return 1
-        case 1:
-            return 1
-        case 2:
-            return 3
         default:
-            return 1 // other sections only have a single cell
+            if let realPost:Post = post {
+                return fetchedResultController.sections[0].numberOfObjects
+            } else {
+                return 0
+            }
         }
     }
-
     
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        switch indexPath.row {
+        switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCellWithIdentifier(postViewCellIdentifier, forIndexPath: indexPath) as UITableViewCell
-            cell.backgroundColor = UIColor.lightGrayColor()
-            if let realPost:Post = post {
+            cell.backgroundColor = lightGrey
+            if let realPost:Post = self.post {
                 cell.textLabel.text = realPost.text
             }
-            print("grey => \(indexPath.section)")
-            return cell
-        case indexPath.length:
-            let cell = tableView.dequeueReusableCellWithIdentifier(commentEntryCellIdentifier, forIndexPath: indexPath) as UITableViewCell
-            cell.backgroundColor = UIColor.redColor()
-            print("red => \(indexPath.section)")
             return cell
         default:
             let cell = tableView.dequeueReusableCellWithIdentifier(commentCellIdentifier, forIndexPath: indexPath) as UITableViewCell
             cell.backgroundColor = UIColor.greenColor()
-            print("green => \(indexPath.section)")
+            let comment = fetchedResultController.objectAtIndexPath(indexPath) as Comment
+//            cell.textLabel.text = comment.text
+            
+            cell.textLabel.text = "foo"
             return cell
         }
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+    
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if let realIdentifier:String = segue?.identifier {
+            if realIdentifier == "createcomment" {
+                let createCommentVC = segue.destinationViewController as CreateCommentViewController
+                createCommentVC.post = self.post
+            }
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView!, moveRowAtIndexPath fromIndexPath: NSIndexPath!, toIndexPath: NSIndexPath!) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView!, canMoveRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+    
     // MARK: - Core Data Stuff
     
     func controllerDidChangeContent(controller: NSFetchedResultsController!) {
@@ -129,10 +102,15 @@ class ViewPostTableViewController: UITableViewController, NSFetchedResultsContro
     }
     
     func taskFetchRequest() -> NSFetchRequest {
-        let fetchRequest = NSFetchRequest(entityName: "Post")
-        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        return fetchRequest
+        if let realPost:Post = self.post {
+            let fetchRequest = NSFetchRequest(entityName: "Comment")
+            let sortDescriptor = NSSortDescriptor(key: "date", ascending: false) // TODO: We use chronological order for comments, but reverse-chronological for posts!
+            fetchRequest.predicate = NSPredicate(format: "post = %@", realPost)
+            fetchRequest.sortDescriptors = [sortDescriptor]
+            return fetchRequest
+        } else {
+            return NSFetchRequest(entityName: "")
+        }
     }
 
 }

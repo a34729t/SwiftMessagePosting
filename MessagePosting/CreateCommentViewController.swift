@@ -1,21 +1,23 @@
 //
-//  CreatePostViewController.swift
+//  CreateCommentViewController.swift
 //  MessagePosting
 //
-//  Created by Nicolas Flacco on 8/17/14.
+//  Created by Nicolas Flacco on 8/24/14.
 //  Copyright (c) 2014 Nicolas Flacco. All rights reserved.
 //
 
 import CoreData
 import UIKit
 
-class CreatePostViewController: UIViewController, UITextViewDelegate {
+class CreateCommentViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var textFieldLengthLabel: UILabel!
     @IBOutlet weak var placeholderTextLabel: UILabel!
     
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+    
+    var post:Post? = nil
     
     let minLength:Int = 3
     let maxLength:Int = 140
@@ -52,22 +54,25 @@ class CreatePostViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    func createPost() {
-        let entityDescripition = NSEntityDescription.entityForName("Post", inManagedObjectContext: managedObjectContext)
-        let post = Post(entity: entityDescripition, insertIntoManagedObjectContext: managedObjectContext)
-        post.text = textView.text
-        post.date = NSDate()
-        managedObjectContext!.save(nil)
+    func addCommentToPost() {
+        if let realPost:Post = self.post {
+            let entityDescripition = NSEntityDescription.entityForName("Comment", inManagedObjectContext: managedObjectContext)
+            let comment = Comment(entity: entityDescripition, insertIntoManagedObjectContext: managedObjectContext)
+            comment.text = textView.text
+            comment.date = NSDate()
+            comment.post = realPost
+            managedObjectContext!.save(nil)
+        }
     }
     
     @IBAction func done(sender: AnyObject) {
         let textLength = countElements(textView.text!)
         if  minLength <= textLength && textLength <= maxLength  {
-            createPost()
+            addCommentToPost()
             navigationController.popViewControllerAnimated(true)
         } else {
             // Put up an alert view
-            var alert = UIAlertController(title: "Warning", message: "Post must have content!", preferredStyle: UIAlertControllerStyle.Alert)
+            var alert = UIAlertController(title: "Warning", message: "Comment must have content!", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
