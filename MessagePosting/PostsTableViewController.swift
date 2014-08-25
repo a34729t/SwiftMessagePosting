@@ -101,7 +101,7 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
     
     func taskFetchRequest() -> NSFetchRequest {
         let fetchRequest = NSFetchRequest(entityName: "Post")
-        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false) // TODO: We use chronological order for comments, but reverse-chronological for posts!
         fetchRequest.sortDescriptors = [sortDescriptor]
         return fetchRequest
     }

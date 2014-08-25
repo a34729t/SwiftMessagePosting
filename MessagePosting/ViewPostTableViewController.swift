@@ -63,20 +63,20 @@ class ViewPostTableViewController: UITableViewController, NSFetchedResultsContro
     
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         switch indexPath.section {
-        case 0:
+        case 1:
+            let cell = tableView.dequeueReusableCellWithIdentifier(commentCellIdentifier, forIndexPath: indexPath) as UITableViewCell
+
+            // We have to modify our FetchedResultsController (see http://stackoverflow.com/questions/11540292/weird-behaviour-with-fetchedresultscontroller-in-numberofrowsinsection)
+            let frcIndexPath = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section - 1)
+            let comment = fetchedResultController.objectAtIndexPath(frcIndexPath) as Comment
+            cell.textLabel.text = comment.text
+            return cell
+        default:
             let cell = tableView.dequeueReusableCellWithIdentifier(postViewCellIdentifier, forIndexPath: indexPath) as UITableViewCell
             cell.backgroundColor = lightGrey
             if let realPost:Post = self.post {
                 cell.textLabel.text = realPost.text
             }
-            return cell
-        default:
-            let cell = tableView.dequeueReusableCellWithIdentifier(commentCellIdentifier, forIndexPath: indexPath) as UITableViewCell
-            cell.backgroundColor = UIColor.greenColor()
-            let comment = fetchedResultController.objectAtIndexPath(indexPath) as Comment
-//            cell.textLabel.text = comment.text
-            
-            cell.textLabel.text = "foo"
             return cell
         }
     }
@@ -104,7 +104,7 @@ class ViewPostTableViewController: UITableViewController, NSFetchedResultsContro
     func taskFetchRequest() -> NSFetchRequest {
         if let realPost:Post = self.post {
             let fetchRequest = NSFetchRequest(entityName: "Comment")
-            let sortDescriptor = NSSortDescriptor(key: "date", ascending: false) // TODO: We use chronological order for comments, but reverse-chronological for posts!
+            let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
             fetchRequest.predicate = NSPredicate(format: "post = %@", realPost)
             fetchRequest.sortDescriptors = [sortDescriptor]
             return fetchRequest
