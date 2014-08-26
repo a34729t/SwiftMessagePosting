@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jbg-nI-qZN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jbg-nI-qZN">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--What's Happening?-->
@@ -17,9 +19,37 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y1l-xX-2wL" id="RpL-CG-oyn">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhe-3f-b06">
+                                            <rect key="frame" x="541" y="11" width="51" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="51" id="HEn-V9-dem"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insert random post here that talks about interesting things." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBD-9v-rH6">
+                                            <rect key="frame" x="21" y="11" width="512" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="jhe-3f-b06" firstAttribute="firstBaseline" secondItem="vBD-9v-rH6" secondAttribute="firstBaseline" id="1b5-lK-tm8"/>
+                                        <constraint firstItem="jhe-3f-b06" firstAttribute="trailing" secondItem="RpL-CG-oyn" secondAttribute="trailingMargin" id="41i-Bu-9cf"/>
+                                        <constraint firstItem="vBD-9v-rH6" firstAttribute="centerY" secondItem="RpL-CG-oyn" secondAttribute="centerY" id="DiC-i8-Yia"/>
+                                        <constraint firstItem="vBD-9v-rH6" firstAttribute="baseline" secondItem="jhe-3f-b06" secondAttribute="baseline" id="LXr-D8-neM"/>
+                                        <constraint firstItem="vBD-9v-rH6" firstAttribute="top" secondItem="RpL-CG-oyn" secondAttribute="topMargin" constant="3" id="Ocz-ad-q5q"/>
+                                        <constraint firstItem="jhe-3f-b06" firstAttribute="leading" secondItem="vBD-9v-rH6" secondAttribute="trailing" constant="8" symbolic="YES" id="ntZ-t6-YZ5"/>
+                                        <constraint firstItem="vBD-9v-rH6" firstAttribute="leading" secondItem="RpL-CG-oyn" secondAttribute="leadingMargin" constant="13" id="zRo-Ee-fDP"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="YwK-8a-ZO5" kind="show" identifier="select" id="pkJ-l2-RiL"/>
+                                    <outlet property="commentCountLabel" destination="jhe-3f-b06" id="M8O-gM-ceb"/>
+                                    <outlet property="commentTextLabel" destination="vBD-9v-rH6" id="ehh-2C-QbZ"/>
+                                    <segue destination="YwK-8a-ZO5" kind="show" identifier="select" id="5Uv-qs-nk4"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

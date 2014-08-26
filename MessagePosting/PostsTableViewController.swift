@@ -28,7 +28,7 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
         fetchedResultController.performFetch(nil)
         
         // i don't know why this weird .self construction is needed but it is
-        tableView.registerClass(PostTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+//        tableView.registerClass(PostTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.estimatedRowHeight=44.0
         tableView.rowHeight=UITableViewAutomaticDimension
     }
@@ -51,7 +51,9 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell? {
         var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as PostTableViewCell
         let post = fetchedResultController.objectAtIndexPath(indexPath) as Post
-        cell.cellLabel.text = post.text
+        cell.commentTextLabel.text = post.text
+        cell.commentCountLabel.text = "C=\(post.comments.count)"
+        
         return cell
     }
     
@@ -66,11 +68,6 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
             managedObjectContext?.deleteObject(managedObject)
             managedObjectContext?.save(nil)
         }
-    }
-    
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!)  {
-        let cell = tableView.cellForRowAtIndexPath(indexPath);
-        self.performSegueWithIdentifier("select", sender: cell) // Can I do this with 'selection' segue instead?
     }
     
     // MARK: - Navigation
