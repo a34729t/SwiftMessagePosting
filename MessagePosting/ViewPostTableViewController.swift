@@ -19,8 +19,6 @@ class ViewPostTableViewController: UITableViewController, NSFetchedResultsContro
     let postViewCellIdentifier = "PostViewCell"
     let commentCellIdentifier = "CommentCell"
     
-    let lightGrey:UIColor = UIColor(white: 247/255, alpha: 1)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -72,10 +70,9 @@ class ViewPostTableViewController: UITableViewController, NSFetchedResultsContro
             cell.textLabel.text = comment.text
             return cell
         default:
-            let cell = tableView.dequeueReusableCellWithIdentifier(postViewCellIdentifier, forIndexPath: indexPath) as UITableViewCell
-            cell.backgroundColor = lightGrey
+            let cell = tableView.dequeueReusableCellWithIdentifier(postViewCellIdentifier, forIndexPath: indexPath) as ViewPostTableViewCell
             if let realPost:Post = self.post {
-                cell.textLabel.text = realPost.text
+                cell.postTextLabel.text = realPost.text
             }
             return cell
         }

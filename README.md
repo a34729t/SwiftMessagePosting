@@ -1,8 +1,6 @@
 ### TODO
 
-* Add IB constraints to create post
-* Add IB constraints to create comment
-* Find a good comment icon (vector, maybe using glyph font?) or make my own poverty icon
+* Add IB constraints to create comment (should be minimal; see create post)
 
 ### NOTE
 

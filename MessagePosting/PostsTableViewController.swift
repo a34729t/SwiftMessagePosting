@@ -14,6 +14,7 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
     let cellIdentifier = "PostCell"
     let dateFormatter = NSDateFormatter()
     
+    
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
     var fetchedResultController: NSFetchedResultsController = NSFetchedResultsController()
     
@@ -21,7 +22,7 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dateFormatter.dateFormat = "yyyy-MM-dd 'at' h:mm a" // superset of OP's format
+        dateFormatter.dateFormat = "yyyy-MM-dd 'at' HH:mm"
         
         fetchedResultController = getFetchedResultController()
         fetchedResultController.delegate = self
@@ -51,8 +52,9 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell? {
         var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as PostTableViewCell
         let post = fetchedResultController.objectAtIndexPath(indexPath) as Post
-        cell.commentTextLabel.text = post.text
-        cell.commentCountLabel.text = "C=\(post.comments.count)"
+        cell.postTextLabel.text = post.text
+        cell.dateLabel.text = dateFormatter.stringFromDate(post.date)
+        cell.commentCountLabel.text = "\(post.comments.count)"
         
         return cell
     }

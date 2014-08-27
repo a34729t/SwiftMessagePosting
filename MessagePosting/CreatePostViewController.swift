@@ -13,7 +13,6 @@ class CreatePostViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var textFieldLengthLabel: UILabel!
-    @IBOutlet weak var placeholderTextLabel: UILabel!
     
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
     
@@ -34,12 +33,19 @@ class CreatePostViewController: UIViewController, UITextViewDelegate {
         let oldText = textView.text as NSString // hack cause string length stuff is garbage in swift
         let newText = oldText.stringByReplacingCharactersInRange(range, withString: text) as NSString
         
+        // Dismiss keyboard if return
+        if text == "\n" {
+            self.view.endEditing(true)
+        }
+        
         // Enable placeholder text if no text entered
+        /*
         if newText.length == 0 {
             placeholderTextLabel.hidden = false
         } else {
             placeholderTextLabel.hidden = true
         }
+        */
         
         // Truncate text entered if too long
         if newText.length <= maxLength {
