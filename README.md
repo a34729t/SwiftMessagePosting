@@ -1,6 +1,8 @@
 ### TODO
 
-* Add IB constraints to create comment (should be minimal; see create post)
+* Create post/comment VC should be the same one (to avoid duplicated code)
+* Add a menu button from main screen
+* Add a storyboard or VC for new user story
 
 ### NOTE
 
