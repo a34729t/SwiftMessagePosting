@@ -1,8 +1,12 @@
 ### TODO
 
-* Create post/comment VC should be the same one (to avoid duplicated code)
 * Add a menu button from main screen
 * Add a storyboard or VC for new user story
+
+### DONE
+
+* Create post/comment VC should be the same one (to avoid duplicated code)
+* XCode 6b6 developer certs fixed
 
 ### NOTE
 

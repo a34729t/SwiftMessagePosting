@@ -94,7 +94,7 @@
         <!--Yeah that's it. Great.-->
         <scene sceneID="PMa-wX-pyb">
             <objects>
-                <viewController id="r8Z-mf-Ohk" customClass="CreatePostViewController" customModule="MessagePosting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="r8Z-mf-Ohk" customClass="EditPostViewController" customModule="MessagePosting" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fBi-ne-iNp"/>
                         <viewControllerLayoutGuide type="bottom" id="h9d-TG-WoA"/>
@@ -135,13 +135,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="textFieldLengthLabel" destination="LQ3-FN-KJ8" id="18k-ag-trh"/>
-                        <outlet property="textView" destination="Vqm-ks-zEr" id="wUq-J3-qiI"/>
+                        <outlet property="textFieldLengthLabel" destination="LQ3-FN-KJ8" id="WtE-Jl-md7"/>
+                        <outlet property="textView" destination="Vqm-ks-zEr" id="d7w-Pi-MoK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Nl-cQ-XhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="743" y="82"/>
+            <point key="canvasLocation" x="367" y="1126"/>
         </scene>
         <!--...-->
         <scene sceneID="pWH-gT-auj">
@@ -190,66 +190,14 @@
                     <navigationItem key="navigationItem" title="..." id="3fB-pe-ClQ">
                         <barButtonItem key="rightBarButtonItem" title="Comment" id="FAk-Wr-jCu">
                             <connections>
-                                <segue destination="SFN-eH-E1U" kind="show" identifier="createcomment" id="PSK-TW-v0p"/>
+                                <segue destination="r8Z-mf-Ohk" kind="show" identifier="comment" id="i5H-7H-CSq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6hw-Os-ckB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="743" y="738"/>
-        </scene>
-        <!--Got comment?-->
-        <scene sceneID="n5Z-O3-DGa">
-            <objects>
-                <viewController id="SFN-eH-E1U" customClass="CreateCommentViewController" customModule="MessagePosting" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nlV-Wj-l2n"/>
-                        <viewControllerLayoutGuide type="bottom" id="s4T-bV-sVc"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yIi-1P-Wy7">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="N characters left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWK-dn-U3S">
-                                <rect key="frame" x="16" y="72" width="181" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzq-fg-USZ">
-                                <rect key="frame" x="16" y="92" width="568" height="210"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outlet property="delegate" destination="SFN-eH-E1U" id="zrr-Vr-YjX"/>
-                                </connections>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="TWK-dn-U3S" firstAttribute="top" secondItem="nlV-Wj-l2n" secondAttribute="bottom" constant="8" id="Amh-gC-YyV"/>
-                            <constraint firstItem="xzq-fg-USZ" firstAttribute="top" secondItem="nlV-Wj-l2n" secondAttribute="bottom" constant="28" id="KIW-c4-zEU"/>
-                            <constraint firstItem="xzq-fg-USZ" firstAttribute="leading" secondItem="yIi-1P-Wy7" secondAttribute="leadingMargin" id="KNO-a7-jO0"/>
-                            <constraint firstItem="xzq-fg-USZ" firstAttribute="trailing" secondItem="yIi-1P-Wy7" secondAttribute="trailingMargin" id="hCc-8e-p6n"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Got comment?" id="2ut-yf-VXi">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="byx-ep-Al1">
-                            <connections>
-                                <action selector="done:" destination="SFN-eH-E1U" id="KS9-1B-Tic"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="textFieldLengthLabel" destination="TWK-dn-U3S" id="Oop-O0-hiz"/>
-                        <outlet property="textView" destination="xzq-fg-USZ" id="WJl-ur-aYL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xUA-LX-TMv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1405" y="738"/>
+            <point key="canvasLocation" x="761" y="380"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ufY-6N-JvW">
@@ -271,4 +219,7 @@
     <resources>
         <image name="CommentIcon" width="50" height="50"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="i5H-7H-CSq"/>
+    </inferredMetricsTieBreakers>
 </document>

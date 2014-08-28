@@ -80,9 +80,9 @@ class ViewPostTableViewController: UITableViewController, NSFetchedResultsContro
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         if let realIdentifier:String = segue?.identifier {
-            if realIdentifier == "createcomment" {
-                let createCommentVC = segue.destinationViewController as CreateCommentViewController
-                createCommentVC.post = self.post
+            if realIdentifier == "comment" {
+                let editPostVC = segue.destinationViewController as EditPostViewController
+                editPostVC.post = self.post
             }
         }
     }
