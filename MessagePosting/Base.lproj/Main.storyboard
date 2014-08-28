@@ -80,12 +80,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="What's Happening?" id="SyC-bp-eKV">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qT0-gP-GkK">
+                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="bM7-Ch-Ju7"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="qT0-gP-GkK">
                             <connections>
                                 <segue destination="r8Z-mf-Ohk" kind="show" identifier="create" id="KGy-s9-6B3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="sDS-xd-8i2" kind="presentation" identifier="NUX" id="FOP-rm-4sD"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xpn-n8-NoO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -215,11 +219,29 @@
             </objects>
             <point key="canvasLocation" x="-751" y="380"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="xxY-XE-HHs">
+            <objects>
+                <viewController id="sDS-xd-8i2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="77L-eZ-fc3"/>
+                        <viewControllerLayoutGuide type="bottom" id="1qH-2b-LRD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TyO-xx-1hC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ek-4t-Pwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-752" y="1130"/>
+        </scene>
     </scenes>
     <resources>
         <image name="CommentIcon" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="i5H-7H-CSq"/>
+        <segue reference="KGy-s9-6B3"/>
     </inferredMetricsTieBreakers>
 </document>

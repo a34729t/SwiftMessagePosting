@@ -91,7 +91,7 @@ class EditPostViewController: UIViewController, UITextViewDelegate {
             navigationController.popViewControllerAnimated(true)
         } else {
             // Put up an alert view
-            var alert = UIAlertController(title: "Warning", message: "Comment must have content!", preferredStyle: UIAlertControllerStyle.Alert)
+            var alert = UIAlertController(title: "Warning", message: "You gotta type something!", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }

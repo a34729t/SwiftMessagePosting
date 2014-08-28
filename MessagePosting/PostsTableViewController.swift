@@ -14,10 +14,10 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
     let cellIdentifier = "PostCell"
     let dateFormatter = NSDateFormatter()
     
-    
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
     var fetchedResultController: NSFetchedResultsController = NSFetchedResultsController()
     
+    let keyHasLaunchedOnce = "HasLaunchedOnce"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +28,11 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
         fetchedResultController.delegate = self
         fetchedResultController.performFetch(nil)
         
-        // i don't know why this weird .self construction is needed but it is
-//        tableView.registerClass(PostTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.estimatedRowHeight=44.0
         tableView.rowHeight=UITableViewAutomaticDimension
+        
+        // Check if launched
+        maybeDoNUX()
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,6 +73,16 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
         }
     }
     
+    // MARK: - NUX
+    
+    func maybeDoNUX() {
+        if (!NSUserDefaults.standardUserDefaults().boolForKey(keyHasLaunchedOnce)) {
+            self.performSegueWithIdentifier("NUX", sender: self)
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: keyHasLaunchedOnce)
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
+    
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
@@ -85,7 +96,6 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
             }
         }
     }
-    
 
     // MARK: - Core Data Stuff
     
