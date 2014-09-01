@@ -1,7 +1,7 @@
 ### TODO
 
 * Add simple analytics to parse
--- Compose post
+-- Compose post event is super easy
 -- Time in app
 * What should go in the menu?
 * Fix up the post details page

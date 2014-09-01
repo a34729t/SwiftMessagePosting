@@ -38,6 +38,7 @@
 		03C73DEF19B401EE003AA10E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C73DEE19B401EE003AA10E /* Social.framework */; };
 		03C73DF119B401F3003AA10E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C73DF019B401F3003AA10E /* StoreKit.framework */; };
 		03C73DF319B401FA003AA10E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C73DF219B401FA003AA10E /* SystemConfiguration.framework */; };
+		03C73DF519B505F6003AA10E /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C73DF419B505F6003AA10E /* Analytics.swift */; };
 		03CF1E6019A90C8F009739F5 /* ViewPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CF1E5F19A90C8F009739F5 /* ViewPostTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +91,7 @@
 		03C73DEE19B401EE003AA10E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		03C73DF019B401F3003AA10E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		03C73DF219B401FA003AA10E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		03C73DF419B505F6003AA10E /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		03CF1E5F19A90C8F009739F5 /* ViewPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPostTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				03280DD619A1842500A67AC0 /* AppDelegate.swift */,
+				03C73DF419B505F6003AA10E /* Analytics.swift */,
 				03C73DDA19B40148003AA10E /* Constants.swift */,
 				036F7C3919B3ED6F001C31B1 /* MessagePosting-Bridging-Header.h */,
 				03280DD519A1842500A67AC0 /* Info.plist */,
@@ -359,6 +362,7 @@
 				03CF1E6019A90C8F009739F5 /* ViewPostTableViewController.swift in Sources */,
 				03280DFD19A189CD00A67AC0 /* PostsTableViewController.swift in Sources */,
 				039140AB19AA853D00CBADEC /* Comment.swift in Sources */,
+				03C73DF519B505F6003AA10E /* Analytics.swift in Sources */,
 				03280DFF19A1B47D00A67AC0 /* PostTableViewCell.swift in Sources */,
 				0346C5F519AD78AC00F86282 /* ViewPostTableViewCell.swift in Sources */,
 				0378B1DA19AEDD3400658607 /* EditPostViewController.swift in Sources */,
