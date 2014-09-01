@@ -16,9 +16,28 @@
 		03280DFF19A1B47D00A67AC0 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280DFE19A1B47D00A67AC0 /* PostTableViewCell.swift */; };
 		03280E0819A3086600A67AC0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 03280E0719A3086600A67AC0 /* README.md */; };
 		0346C5F519AD78AC00F86282 /* ViewPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346C5F419AD78AC00F86282 /* ViewPostTableViewCell.swift */; };
+		036F7C3619B2A7EB001C31B1 /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036F7C3519B2A7EB001C31B1 /* DismissSegue.swift */; };
+		036F7C3C19B3ED6F001C31B1 /* TMReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 036F7C3B19B3ED6F001C31B1 /* TMReachability.m */; };
+		036F7C3E19B3EDBF001C31B1 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 036F7C3D19B3EDBF001C31B1 /* LICENSE.txt */; };
+		036F7C4119B3F228001C31B1 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036F7C4019B3F228001C31B1 /* Reachability.swift */; };
 		0378B1DA19AEDD3400658607 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0378B1D919AEDD3400658607 /* EditPostViewController.swift */; };
 		039140AB19AA853D00CBADEC /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039140AA19AA853D00CBADEC /* Comment.swift */; };
 		039140AD19AA853E00CBADEC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039140AC19AA853E00CBADEC /* Post.swift */; };
+		03C73DD819B40095003AA10E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C73DC719B40066003AA10E /* Bolts.framework */; };
+		03C73DD919B40095003AA10E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C73DC819B40066003AA10E /* Parse.framework */; };
+		03C73DDB19B40148003AA10E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C73DDA19B40148003AA10E /* Constants.swift */; };
+		03C73DE019B401B7003AA10E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C73DDC19B401B7003AA10E /* Accounts.framework */; };
+		03C73DE119B401B7003AA10E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C73DDD19B401B7003AA10E /* AudioToolbox.framework */; };
+		03C73DE219B401B7003AA10E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C73DDE19B401B7003AA10E /* CFNetwork.framework */; };
+		03C73DE319B401B7003AA10E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C73DDF19B401B7003AA10E /* CoreGraphics.framework */; };
+		03C73DE519B401CE003AA10E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C73DE419B401CE003AA10E /* CoreLocation.framework */; };
+		03C73DE719B401D4003AA10E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C73DE619B401D4003AA10E /* libz.dylib */; };
+		03C73DE919B401DF003AA10E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C73DE819B401DF003AA10E /* MobileCoreServices.framework */; };
+		03C73DEB19B401E4003AA10E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C73DEA19B401E4003AA10E /* QuartzCore.framework */; };
+		03C73DED19B401E8003AA10E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C73DEC19B401E8003AA10E /* Security.framework */; };
+		03C73DEF19B401EE003AA10E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C73DEE19B401EE003AA10E /* Social.framework */; };
+		03C73DF119B401F3003AA10E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C73DF019B401F3003AA10E /* StoreKit.framework */; };
+		03C73DF319B401FA003AA10E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C73DF219B401FA003AA10E /* SystemConfiguration.framework */; };
 		03CF1E6019A90C8F009739F5 /* ViewPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CF1E5F19A90C8F009739F5 /* ViewPostTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,9 +65,31 @@
 		03280DFE19A1B47D00A67AC0 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		03280E0719A3086600A67AC0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0346C5F419AD78AC00F86282 /* ViewPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPostTableViewCell.swift; sourceTree = "<group>"; };
+		036F7C3519B2A7EB001C31B1 /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
+		036F7C3919B3ED6F001C31B1 /* MessagePosting-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MessagePosting-Bridging-Header.h"; sourceTree = "<group>"; };
+		036F7C3A19B3ED6F001C31B1 /* TMReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMReachability.h; sourceTree = "<group>"; };
+		036F7C3B19B3ED6F001C31B1 /* TMReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMReachability.m; sourceTree = "<group>"; };
+		036F7C3D19B3EDBF001C31B1 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		036F7C4019B3F228001C31B1 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		0378B1D919AEDD3400658607 /* EditPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
 		039140AA19AA853D00CBADEC /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		039140AC19AA853E00CBADEC /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		03C73DC719B40066003AA10E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		03C73DC819B40066003AA10E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		03C73DC919B40066003AA10E /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		03C73DDA19B40148003AA10E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		03C73DDC19B401B7003AA10E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		03C73DDD19B401B7003AA10E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		03C73DDE19B401B7003AA10E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		03C73DDF19B401B7003AA10E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		03C73DE419B401CE003AA10E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		03C73DE619B401D4003AA10E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		03C73DE819B401DF003AA10E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		03C73DEA19B401E4003AA10E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		03C73DEC19B401E8003AA10E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		03C73DEE19B401EE003AA10E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		03C73DF019B401F3003AA10E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		03C73DF219B401FA003AA10E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		03CF1E5F19A90C8F009739F5 /* ViewPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPostTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +98,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C73DF319B401FA003AA10E /* SystemConfiguration.framework in Frameworks */,
+				03C73DF119B401F3003AA10E /* StoreKit.framework in Frameworks */,
+				03C73DEF19B401EE003AA10E /* Social.framework in Frameworks */,
+				03C73DED19B401E8003AA10E /* Security.framework in Frameworks */,
+				03C73DEB19B401E4003AA10E /* QuartzCore.framework in Frameworks */,
+				03C73DE919B401DF003AA10E /* MobileCoreServices.framework in Frameworks */,
+				03C73DE719B401D4003AA10E /* libz.dylib in Frameworks */,
+				03C73DE519B401CE003AA10E /* CoreLocation.framework in Frameworks */,
+				03C73DE019B401B7003AA10E /* Accounts.framework in Frameworks */,
+				03C73DE119B401B7003AA10E /* AudioToolbox.framework in Frameworks */,
+				03C73DE219B401B7003AA10E /* CFNetwork.framework in Frameworks */,
+				03C73DE319B401B7003AA10E /* CoreGraphics.framework in Frameworks */,
+				03C73DD819B40095003AA10E /* Bolts.framework in Frameworks */,
+				03C73DD919B40095003AA10E /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,8 +147,8 @@
 		03280DD319A1842500A67AC0 /* MessagePosting */ = {
 			isa = PBXGroup;
 			children = (
-				03280DD619A1842500A67AC0 /* AppDelegate.swift */,
 				03280DF719A1843C00A67AC0 /* UI */,
+				036F7C3419B2A0D5001C31B1 /* Network */,
 				03280DF619A1842D00A67AC0 /* CoreData */,
 				03280DD419A1842500A67AC0 /* Supporting Files */,
 			);
@@ -103,8 +158,12 @@
 		03280DD419A1842500A67AC0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				03280DE019A1842600A67AC0 /* Images.xcassets */,
+				03280DD619A1842500A67AC0 /* AppDelegate.swift */,
+				03C73DDA19B40148003AA10E /* Constants.swift */,
+				036F7C3919B3ED6F001C31B1 /* MessagePosting-Bridging-Header.h */,
 				03280DD519A1842500A67AC0 /* Info.plist */,
+				03280DE019A1842600A67AC0 /* Images.xcassets */,
+				03C73DC619B40066003AA10E /* frameworks */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -145,8 +204,50 @@
 				03CF1E5F19A90C8F009739F5 /* ViewPostTableViewController.swift */,
 				0346C5F419AD78AC00F86282 /* ViewPostTableViewCell.swift */,
 				0378B1D919AEDD3400658607 /* EditPostViewController.swift */,
+				036F7C3519B2A7EB001C31B1 /* DismissSegue.swift */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		036F7C3419B2A0D5001C31B1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				036F7C3F19B3EDC7001C31B1 /* Reachability */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		036F7C3F19B3EDC7001C31B1 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				036F7C3D19B3EDBF001C31B1 /* LICENSE.txt */,
+				036F7C4019B3F228001C31B1 /* Reachability.swift */,
+				036F7C3A19B3ED6F001C31B1 /* TMReachability.h */,
+				036F7C3B19B3ED6F001C31B1 /* TMReachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+		03C73DC619B40066003AA10E /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03C73DF219B401FA003AA10E /* SystemConfiguration.framework */,
+				03C73DF019B401F3003AA10E /* StoreKit.framework */,
+				03C73DEE19B401EE003AA10E /* Social.framework */,
+				03C73DEC19B401E8003AA10E /* Security.framework */,
+				03C73DEA19B401E4003AA10E /* QuartzCore.framework */,
+				03C73DE819B401DF003AA10E /* MobileCoreServices.framework */,
+				03C73DE619B401D4003AA10E /* libz.dylib */,
+				03C73DE419B401CE003AA10E /* CoreLocation.framework */,
+				03C73DDC19B401B7003AA10E /* Accounts.framework */,
+				03C73DDD19B401B7003AA10E /* AudioToolbox.framework */,
+				03C73DDE19B401B7003AA10E /* CFNetwork.framework */,
+				03C73DDF19B401B7003AA10E /* CoreGraphics.framework */,
+				03C73DC719B40066003AA10E /* Bolts.framework */,
+				03C73DC819B40066003AA10E /* Parse.framework */,
+				03C73DC919B40066003AA10E /* ParseFacebookUtils.framework */,
+			);
+			path = frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +331,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				036F7C3E19B3EDBF001C31B1 /* LICENSE.txt in Resources */,
 				03280DDF19A1842600A67AC0 /* Main.storyboard in Resources */,
 				03280DE119A1842600A67AC0 /* Images.xcassets in Resources */,
 			);
@@ -249,7 +351,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				036F7C3C19B3ED6F001C31B1 /* TMReachability.m in Sources */,
 				03280DDA19A1842600A67AC0 /* MessagePosting.xcdatamodeld in Sources */,
+				036F7C3619B2A7EB001C31B1 /* DismissSegue.swift in Sources */,
 				03280E0819A3086600A67AC0 /* README.md in Sources */,
 				03280DD719A1842500A67AC0 /* AppDelegate.swift in Sources */,
 				03CF1E6019A90C8F009739F5 /* ViewPostTableViewController.swift in Sources */,
@@ -258,7 +362,9 @@
 				03280DFF19A1B47D00A67AC0 /* PostTableViewCell.swift in Sources */,
 				0346C5F519AD78AC00F86282 /* ViewPostTableViewCell.swift in Sources */,
 				0378B1DA19AEDD3400658607 /* EditPostViewController.swift in Sources */,
+				03C73DDB19B40148003AA10E /* Constants.swift in Sources */,
 				039140AD19AA853E00CBADEC /* Post.swift in Sources */,
+				036F7C4119B3F228001C31B1 /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,10 +485,15 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MessagePosting/frameworks",
+				);
 				INFOPLIST_FILE = MessagePosting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MessagePosting/MessagePosting-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -395,10 +506,15 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MessagePosting/frameworks",
+				);
 				INFOPLIST_FILE = MessagePosting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MessagePosting/MessagePosting-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -1,10 +1,17 @@
 ### TODO
 
-* Create basic NUX/instruction flow
-* Use a swipe gesture recognizer + skip button (or maybe just a uipageviewcontroller) (see http://preview.getprismatic.com/story/1385472477548?share=true)
+* Add simple analytics to parse
+-- Compose post
+-- Time in app
+* What should go in the menu?
+* Fix up the post details page
+
 
 ### DONE
 
+* Parse chosen for server-side
+* Figure out reachability in swift (bridging header )
+* Create basic NUX VC (with custom dismiss segue)
 * Add a menu button from main screen
 * Add initial hook for NUX
 * Create post/comment VC should be the same one (to avoid duplicated code)
