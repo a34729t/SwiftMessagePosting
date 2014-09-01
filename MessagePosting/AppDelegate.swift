@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Parse.setApplicationId(parseApplicationId, clientKey: parseClientKey)
         
-//        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        trackOpen(launchOptions)
+        
         return true
     }
 
@@ -34,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         
-        self.recordedTimeInApp = calculateTimeInApp(self.recordedTimeInApp!, self.startDateTime!)
+        self.recordedTimeInApp = trackTimeInApp(self.recordedTimeInApp!, self.startDateTime!)
     }
 
     func applicationWillEnterForeground(application: UIApplication!) {
@@ -52,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
         
-        self.recordedTimeInApp = calculateTimeInApp(self.recordedTimeInApp!, self.startDateTime!)
+        self.recordedTimeInApp = trackTimeInApp(self.recordedTimeInApp!, self.startDateTime!)
     }
     
     // MARK: - Core Data stack

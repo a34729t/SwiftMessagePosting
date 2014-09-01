@@ -10,7 +10,11 @@ import Foundation
 
 let analyticsMetricTimeInApp = "Time in App"
 
-func calculateTimeInApp(recordedTimeInApp:Bool, startDateTime:NSDate) -> Bool {
+func trackOpen(launchOptions:NSDictionary!) {
+    PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+}
+
+func trackTimeInApp(recordedTimeInApp:Bool, startDateTime:NSDate) -> Bool {
     if recordedTimeInApp == false {
         let seconds = startDateTime.timeIntervalSinceNow * -1
         let minutes = Int(seconds/60)
