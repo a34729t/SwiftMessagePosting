@@ -23,14 +23,14 @@ func trackTimeInApp(recordedTimeInApp:Bool, startDateTime:NSDate) -> Bool {
         switch minutes {
         case 0...1:
             timeInAppRange = "0...1"
-        case 1...3:
-            timeInAppRange = "1...3"
+        case 1...2:
+            timeInAppRange = "1...2"
+        case 2...3:
+            timeInAppRange = "2...3"
         case 3...5:
             timeInAppRange = "3...5"
-        case 5...10:
-            timeInAppRange = "5...10"
         default:
-            timeInAppRange = "10+"
+            timeInAppRange = "5+"
         }
         
         let dimensions = [
