@@ -149,6 +149,7 @@
 		03280DD319A1842500A67AC0 /* MessagePosting */ = {
 			isa = PBXGroup;
 			children = (
+				03C73DF619B50C9D003AA10E /* Analytics */,
 				03280DF719A1843C00A67AC0 /* UI */,
 				036F7C3419B2A0D5001C31B1 /* Network */,
 				03280DF619A1842D00A67AC0 /* CoreData */,
@@ -161,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				03280DD619A1842500A67AC0 /* AppDelegate.swift */,
-				03C73DF419B505F6003AA10E /* Analytics.swift */,
 				03C73DDA19B40148003AA10E /* Constants.swift */,
 				036F7C3919B3ED6F001C31B1 /* MessagePosting-Bridging-Header.h */,
 				03280DD519A1842500A67AC0 /* Info.plist */,
@@ -251,6 +251,14 @@
 				03C73DC919B40066003AA10E /* ParseFacebookUtils.framework */,
 			);
 			path = frameworks;
+			sourceTree = "<group>";
+		};
+		03C73DF619B50C9D003AA10E /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				03C73DF419B505F6003AA10E /* Analytics.swift */,
+			);
+			name = Analytics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

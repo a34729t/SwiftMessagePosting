@@ -1,14 +1,16 @@
 ### TODO
 
-* Add simple analytics to parse
--- Compose post event is super easy
--- Time in app
+* Test reachability
+* Figure out what's needed to save post + comment to parse
+* Fix up the post details page - comment background should be different
 * What should go in the menu?
-* Fix up the post details page
-
 
 ### DONE
 
+* Add simple analytics to parse
+-- Compose post & comment
+-- Time in app
+-- Launch
 * Parse chosen for server-side
 * Figure out reachability in swift (bridging header )
 * Create basic NUX VC (with custom dismiss segue)

@@ -67,6 +67,8 @@ class EditPostViewController: UIViewController, UITextViewDelegate {
         post.text = textView.text
         post.date = NSDate()
         managedObjectContext!.save(nil)
+        
+        trackComposePost(post.text, post.date)
     }
     
     func addCommentToPost() {
@@ -77,6 +79,8 @@ class EditPostViewController: UIViewController, UITextViewDelegate {
             comment.date = NSDate()
             comment.post = realPost
             managedObjectContext!.save(nil)
+            
+            trackComposeComment(comment.text, comment.date)
         }
     }
     

@@ -9,6 +9,8 @@
 import Foundation
 
 let analyticsMetricTimeInApp = "Time in App"
+let analyticsMetricComposePost = "Compose Post"
+let analyticsMetricComposeComment = "Compose Comment"
 
 func trackOpen(launchOptions:NSDictionary!) {
     PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
@@ -37,11 +39,41 @@ func trackTimeInApp(recordedTimeInApp:Bool, startDateTime:NSDate) -> Bool {
             "timeRange": timeInAppRange
             // possibly add user to this
         ]
-        // Send the dimensions to Parse along with the 'search' event
         PFAnalytics.trackEvent(analyticsMetricTimeInApp, dimensions:dimensions)
         
         return true
     } else {
         return false
+    }
+}
+
+func trackComposePost(text:String, date:NSDate) {
+    let dimensions = [
+        "textLengthRange": textLengthRange(countElements(text))
+    ]
+    PFAnalytics.trackEvent(analyticsMetricComposePost, dimensions:dimensions)
+}
+
+func trackComposeComment(text:String, date:NSDate) {
+    let dimensions = [
+        "textLengthRange": textLengthRange(countElements(text))
+    ]
+    PFAnalytics.trackEvent(analyticsMetricComposeComment, dimensions:dimensions)
+}
+
+// MARK: - Helpers
+
+func textLengthRange(text:Int) -> String {
+    switch text {
+    case 0...10:
+        return "0...10"
+    case 10...20:
+        return "10...20"
+    case 20...40:
+        return "20...40"
+    case 40...60:
+        return "40...60"
+    default:
+        return "60-140"
     }
 }
