@@ -62,13 +62,19 @@ class EditPostViewController: UIViewController, UITextViewDelegate {
     }
     
     func createPost() {
-        let entityDescripition = NSEntityDescription.entityForName("Post", inManagedObjectContext: managedObjectContext)
-        let post = Post(entity: entityDescripition, insertIntoManagedObjectContext: managedObjectContext)
-        post.text = textView.text
-        post.date = NSDate()
-        managedObjectContext!.save(nil)
+        let post = MPPost(text: textView.text, date: NSDate())
         
-        trackComposePost(post.text, post.date)
+        let success = {(objectId parseId:String) -> Void in
+            post.id = parseId
+            post.saveToCoreData()
+            trackComposePost(post.text, post.date)
+        }
+        
+        let failure = {(error:NSError!) -> Void in
+            println("failure to upload")
+        }
+        
+        ParseObjectTask(post: post, success, failure)
     }
     
     func addCommentToPost() {
