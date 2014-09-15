@@ -29,13 +29,33 @@ class ViewPostTableViewController: UITableViewController, NSFetchedResultsContro
         // i don't know why this weird .self construction is needed but it is
         tableView.estimatedRowHeight=44.0
         tableView.rowHeight=UITableViewAutomaticDimension
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.addTarget(self, action: Selector("pullToRefresh"), forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(self.refreshControl)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        if let realPost:Post = post {
+            MPComment.getCommentsForPost(realPost)
+        }
+    }
 
+    // MARK: - Actions
+    
+    func pullToRefresh() {
+        if let realPost:Post = post {
+            println("Comment:PTR")
+            MPComment.getCommentsForPost(realPost)
+            self.refreshControl!.endRefreshing()
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
@@ -101,7 +121,7 @@ class ViewPostTableViewController: UITableViewController, NSFetchedResultsContro
     func taskFetchRequest() -> NSFetchRequest {
         if let realPost:Post = self.post {
             let fetchRequest = NSFetchRequest(entityName: "Comment")
-            let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+            let sortDescriptor = NSSortDescriptor(key: "createdAt", ascending: true)
             fetchRequest.predicate = NSPredicate(format: "post = %@", realPost)
             fetchRequest.sortDescriptors = [sortDescriptor]
             return fetchRequest

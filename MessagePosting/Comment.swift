@@ -12,7 +12,8 @@ import CoreData
 class Comment: NSManagedObject {
 
     @NSManaged var id: String
-    @NSManaged var date: NSDate
+    @NSManaged var createdAt: NSDate
+    @NSManaged var updatedAt: NSDate
     @NSManaged var text: String
     @NSManaged var post: Post
 

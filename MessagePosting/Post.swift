@@ -13,7 +13,8 @@ class Post: NSManagedObject {
 
     @NSManaged var id: String
     @NSManaged var text: String
-    @NSManaged var date: NSDate
+    @NSManaged var createdAt: NSDate
+    @NSManaged var updatedAt: NSDate
     @NSManaged var comments: NSSet
 
 }

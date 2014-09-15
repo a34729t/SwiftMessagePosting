@@ -8,5 +8,5 @@
 
 import Foundation
 
-let parseApplicationId = "xxx"
-let parseClientKey = "xxx"
+let parseApplicationId = "jPN9HcazEtrSg5plOOcv3GU03BPu8ulYrg0f4eRn"
+let parseClientKey = "4vbsJibFyiHZ55ftwhUpSUE3ANvfY1nAi0340YbV"

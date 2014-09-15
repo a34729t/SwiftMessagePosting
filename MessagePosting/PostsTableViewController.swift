@@ -33,15 +33,34 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
         
         // Check if launched
         maybeDoNUX()
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.addTarget(self, action: Selector("pullToRefresh"), forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(self.refreshControl)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        MPPost.getPosts()
+    }
+    
+    // MARK: - Actions
+    
+    func pullToRefresh() {
+        println("Post:PTR")
+        MPPost.getPosts()
+        self.refreshControl!.endRefreshing()
+    }
+    
+    // TODO: Menu
+    
 
     // MARK: - Table view data source
-    
+
     override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
         return fetchedResultController.sections.count
     }
@@ -54,7 +73,7 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
         var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as PostTableViewCell
         let post = fetchedResultController.objectAtIndexPath(indexPath) as Post
         cell.postTextLabel.text = post.text
-        cell.dateLabel.text = dateFormatter.stringFromDate(post.date)
+        cell.dateLabel.text = dateFormatter.stringFromDate(post.createdAt)
         cell.commentCountLabel.text = "\(post.comments.count)"
         
         return cell
@@ -109,8 +128,8 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
     }
     
     func taskFetchRequest() -> NSFetchRequest {
-        let fetchRequest = NSFetchRequest(entityName: "Post")
-        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false) // TODO: We use chronological order for comments, but reverse-chronological for posts!
+        let fetchRequest = NSFetchRequest(entityName: coreDataEntityPost)
+        let sortDescriptor = NSSortDescriptor(key: "updatedAt", ascending: false) // TODO: We use chronological order for comments, but reverse-chronological for posts!
         fetchRequest.sortDescriptors = [sortDescriptor]
         return fetchRequest
     }

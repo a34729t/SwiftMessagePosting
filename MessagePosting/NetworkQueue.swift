@@ -8,7 +8,7 @@
 
 // NOTE: All parse stuff should go in here?
 
-import Foundation
+import CoreData
 
 class ParseObjectTask {
     
@@ -16,8 +16,8 @@ class ParseObjectTask {
     var successBlock:(String) -> Void
     var errorBlock:(NSError!) -> Void
     
-    required init(post:MPPost, success:(String) -> Void, error:(NSError!) -> Void) {
-        self.obj = post.toParseFormat()
+    required init(pfObject:PFObject, success:(String) -> Void, error:(NSError!) -> Void) {
+        self.obj = pfObject
         self.successBlock = success
         self.errorBlock = error
         ParseObjectTaskQueue.sharedInstance.add(self)

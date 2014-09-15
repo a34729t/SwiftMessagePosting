@@ -1,12 +1,14 @@
 ### TODO
 
-- We have to not create a coredata object until the server says yes, at which case it's go time'
+
+
+- Post needs to update its updatedAt value and use this in fetchedresultscontroller
+- COmments do not get added to viewpostTVC when created :(
+
+
+- Post cursoring (maybe use the newest post/comment ID + Date as the cursor for get new posts from here?)
 - Add reachability check on post/comment creation
-- Load post from server
-
-
-- Add comment extensions class
-
+- Comment limit is 1000 right now... pagination?
 
 * Make UI suck less in general
 * Fix up the post details page - comment background should be different
@@ -14,6 +16,14 @@
 
 ### DONE
 
+- Add PTR to comment view? Meh
+- Load comments in post tableview
+- Add comment creation + add to server
+-- Basically, when we get PFPost, we will also get the PFComments relating to it -> All these are saved in Core Data
+-- When we write a comment, we first need to ask Parse for the PFObject, and then save the comment to it
+- Add pull to refresh to main table view?
+- Figure out core data dedup on load from server
+- We have to not create a coredata object until the server says yes, at which case it's go time'
 * Test reachability
 * Add simple analytics to parse
 -- Compose post & comment
