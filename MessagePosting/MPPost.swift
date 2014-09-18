@@ -8,18 +8,18 @@
 
 import CoreData
 
-var pfPostDict:Dictionary<NSString,PFObject> = Dictionary()
-
 class MPPost {
     
     var id: String?
     var text: String!
     var createdAt: NSDate!
     var updatedAt: NSDate!
+    var numberComments: Int!
 
     required init(text:String) {
         self.text = text
         self.createdAt = NSDate()
+        self.numberComments = 0
         trackComposePost(self.text, self.createdAt)
     }
     
@@ -27,19 +27,19 @@ class MPPost {
         if obj.parseClassName == parseClassNamePost {
             self.id = obj.objectId as String
             self.text = obj.objectForKey(parseKeyNameText) as String
-            if let commentsPFObject = obj.objectForKey(parseKeyNameComments) {
-                let commentsArray = commentsPFObject as [PFObject]
-                NSLog("foo")
-            }
+            self.numberComments = obj.objectForKey(parseKeyNameNumberComments) as Int // Note: This is set in MPComment
         } else {
             assertionFailure(":(")
         }
     }
     
-    func toParseFormat() -> PFObject {
+    private func toParseFormat() -> PFObject {
         var post = PFObject(className:parseClassNamePost)
         post[parseKeyNameText] = self.text
         post[parseKeyNameComments] = []
+        if self.numberComments == 0 {
+            post[parseKeyNameNumberComments] = self.numberComments
+        }
         return post
     }
     
@@ -72,17 +72,22 @@ class MPPost {
         }
     }
     
-    func saveToCoreData() -> Post? {
+    private func saveToCoreData() -> Post? {
         // 1. Does this post already exist in DB?
         // 2. If so, has it been updated?
         
         if let validId = self.id {
             let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
             let entityDescripition = NSEntityDescription.entityForName(coreDataEntityPost, inManagedObjectContext: managedObjectContext)
-            let post = Post(entity: entityDescripition, insertIntoManagedObjectContext: managedObjectContext)
+            var post = Post(entity: entityDescripition, insertIntoManagedObjectContext: managedObjectContext)
             post.text = self.text
             post.createdAt = self.createdAt
-            post.updatedAt = self.updatedAt
+            post.numberComments = self.numberComments
+            if let realUpdatedAt = self.updatedAt {
+                post.updatedAt = realUpdatedAt
+            } else {
+                post.updatedAt = self.createdAt
+            }
             post.id = validId
             
             var error:NSError?
@@ -98,7 +103,7 @@ class MPPost {
         }
     }
     
-    class func findPostInCoreData(post:MPPost, successBlock:(Post) -> Void, failureBlock:(MPPost) -> Void, errorBlock:(NSError!) -> Void) {
+    private class func findPostInCoreData(post:MPPost, successBlock:(Post) -> Void, failureBlock:(MPPost) -> Void, errorBlock:(NSError!) -> Void) {
         dispatch_async(dispatch_get_main_queue(), {
             let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
             var fetchRequest = NSFetchRequest(entityName: coreDataEntityPost)
@@ -135,11 +140,21 @@ class MPPost {
                     
                     let successBlock = {(post coreDataPost:Post) -> Void in
                         println("already exists")
+                        coreDataPost.numberComments = pfObj[parseKeyNameNumberComments] as Int
+                        coreDataPost.updatedAt = pfObj.updatedAt as NSDate
+                        
+                        let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+                        var error:NSError?
+                        managedObjectContext?.save(&error)
+                        if let realError = error {
+                            // TODO
+                        }
                     }
                     
                     let failureBlock = {(post mpPost:MPPost) -> Void in
                         mpPost.createdAt = pfObj.createdAt as NSDate
                         mpPost.updatedAt = pfObj.updatedAt as NSDate
+                        mpPost.numberComments = pfObj[parseKeyNameNumberComments] as Int
                         let coreDataPost = mpPost.saveToCoreData()
                     }
                     

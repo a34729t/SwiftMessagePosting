@@ -1,21 +1,23 @@
 ### TODO
 
 
+* Refactor MPPost and MPComment (and the associated code in EditPostVC, which should be in the model objects)
+* When typing a comment, does not always immediately show in ViewPostTVC
+* Figure out the network queue, which we really do want to use!
+* Rename ViewPostTVC to PostDetailTVC
 
-- Post needs to update its updatedAt value and use this in fetchedresultscontroller
-- COmments do not get added to viewpostTVC when created :(
 
-
-- Post cursoring (maybe use the newest post/comment ID + Date as the cursor for get new posts from here?)
-- Add reachability check on post/comment creation
-- Comment limit is 1000 right now... pagination?
-
+* Comment limit is 1000 right now... pagination?
 * Make UI suck less in general
 * Fix up the post details page - comment background should be different
 * What should go in the menu?
+* Add reachability check on post/comment creation
 
 ### DONE
 
+- Post needs to update its updatedAt value and use this in fetchedresultscontroller
+- Comment doesn't show up in post detail view!???
+- COmments do not get added to viewpostTVC when created :(
 - Add PTR to comment view? Meh
 - Load comments in post tableview
 - Add comment creation + add to server
@@ -38,5 +40,3 @@
 * XCode 6b6 developer certs fixed
 
 ### NOTE
-
-Needs XCode 6b6 to work properly! The latest beta fixes broken UITableview stuff/transitions/cells/everything!

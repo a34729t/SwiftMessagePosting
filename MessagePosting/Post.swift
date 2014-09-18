@@ -16,5 +16,6 @@ class Post: NSManagedObject {
     @NSManaged var createdAt: NSDate
     @NSManaged var updatedAt: NSDate
     @NSManaged var comments: NSSet
+    @NSManaged var numberComments: NSNumber
 
 }

@@ -25,6 +25,7 @@ class MPComment {
         
         // Add comment to post
         self.pfPost = PFObject(withoutDataWithClassName: parseClassNamePost, objectId: post.id)
+        self.pfPost.incrementKey(parseKeyNameNumberComments)
         self.pfPost.addObject(self.toParseFormat(), forKey: parseKeyNameComments) // Add the comment to the post
     }
     
@@ -65,11 +66,11 @@ class MPComment {
             comment.updatedAt = self.updatedAt
             comment.id = validId
             comment.post = post
-            
             var error:NSError?
             managedObjectContext?.save(&error)
             if let realError = error {
                 // TODO
+                println("TODO: fail!");
             }
             
             return comment

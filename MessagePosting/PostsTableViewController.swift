@@ -74,7 +74,7 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
         let post = fetchedResultController.objectAtIndexPath(indexPath) as Post
         cell.postTextLabel.text = post.text
         cell.dateLabel.text = dateFormatter.stringFromDate(post.createdAt)
-        cell.commentCountLabel.text = "\(post.comments.count)"
+        cell.commentCountLabel.text = "\(post.numberComments)"
         
         return cell
     }
