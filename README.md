@@ -1,8 +1,6 @@
 ### TODO
 
 Comments:
-* Refactor MPPost and MPComment (and the associated code in EditPostVC, which should be in the model objects)
-* When typing a comment, does not always immediately show in ViewPostTVC
 * Rename ViewPostTVC to PostDetailTVC
 
 Networking:
@@ -20,6 +18,7 @@ Future:
 
 ### DONE
 
+- When typing a comment, does not always immediately show in ViewPostTVC
 - Post needs to update its updatedAt value and use this in fetchedresultscontroller
 - Comment doesn't show up in post detail view!???
 - COmments do not get added to viewpostTVC when created :(

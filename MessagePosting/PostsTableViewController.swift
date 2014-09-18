@@ -110,6 +110,8 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
                 let cell = sender as PostTableViewCell
                 let indexPath = tableView.indexPathForCell(cell)
                 let post = fetchedResultController.objectAtIndexPath(indexPath) as Post
+                MPComment.getCommentsForPost(post)
+                
                 let viewPostTVC = segue.destinationViewController as ViewPostTableViewController
                 viewPostTVC.post = post
             }

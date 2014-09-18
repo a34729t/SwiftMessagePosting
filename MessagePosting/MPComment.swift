@@ -16,6 +16,7 @@ class MPComment {
     var updatedAt: NSDate!
     var post:Post!
     var pfPost:PFObject!
+    var pfComment:PFObject!
     
     required init(text:String, post:Post, date:NSDate) {
         self.text = text
@@ -23,10 +24,16 @@ class MPComment {
         self.updatedAt = date
         self.post = post
         
+        // Create pfComment
+        self.pfComment = PFObject(className:parseClassNameComment)
+        self.pfComment[parseKeyNameText] = self.text
+        
         // Add comment to post
         self.pfPost = PFObject(withoutDataWithClassName: parseClassNamePost, objectId: post.id)
         self.pfPost.incrementKey(parseKeyNameNumberComments)
-        self.pfPost.addObject(self.toParseFormat(), forKey: parseKeyNameComments) // Add the comment to the post
+        self.pfPost.addObject(self.pfComment, forKey: parseKeyNameComments) // Add the comment to the post
+        
+        self.pfComment[parseKeyNameParent] = self.pfPost
     }
     
     required init(obj: PFObject) {
@@ -39,17 +46,12 @@ class MPComment {
             assertionFailure(":(")
         }
     }
-
-    func toParseFormat() -> PFObject {
-        var pfComment = PFObject(className:parseClassNameComment)
-        pfComment[parseKeyNameText] = self.text
-        pfComment[parseKeyNameParent] = self.pfPost
-        return pfComment
-    }
     
     // MARK: - Core data
     
     func saveToCoreData(post: Post) -> Comment? {
+        println("comment:saveToCoreData")
+        
         // 1. Does this post already exist in DB?
         // 2. If so, has it been updated?
         
@@ -131,22 +133,25 @@ class MPComment {
     
     func saveToParse(successBlock:(String) -> Void, errorBlock:(NSError!) -> Void) {
         // We save the post, because it automatically saves the comment
+        // NOTE: We only get the comment's objectId after the post has been saved to Parse.com (not at PFObject creation locally)
         
         self.pfPost.saveInBackgroundWithBlock({
             (success: Bool!, error:NSError!) -> Void in
+            
+            println("comment:saveToParse:backgroundblock")
+            
             if success! {
-                if let parseId = self.toParseFormat().objectForKey(parseKeyNameId) as String! {
-                    // save the comment to core data
-                    self.id = parseId
-                    self.saveToCoreData(self.post)
-                    trackComposeComment(self.text, self.createdAt)
-                    
-                    // update the post
-                    MPPost.update(self.post, date: self.updatedAt)
-                    
-                    // fire success
-                    successBlock(parseId)
-                }
+                self.id = self.pfComment.objectId // Save comment.objectId here!
+                
+                // save the comment to core data
+                self.saveToCoreData(self.post)
+                trackComposeComment(self.text, self.createdAt)
+                
+                // update the post
+                MPPost.update(self.post, date: self.updatedAt)
+                
+                // fire success
+                successBlock(self.id!)
             } else {
                 println("failure to upload")
                 errorBlock(error)

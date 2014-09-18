@@ -41,9 +41,7 @@ class ViewPostTableViewController: UITableViewController, NSFetchedResultsContro
     }
     
     override func viewWillAppear(animated: Bool) {
-        if let realPost:Post = post {
-            MPComment.getCommentsForPost(realPost)
-        }
+        tableView.reloadData()
     }
 
     // MARK: - Actions
