@@ -19,7 +19,6 @@
 		03280DED19A1842600A67AC0 /* MessagePostingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280DEC19A1842600A67AC0 /* MessagePostingTests.swift */; };
 		03280DFD19A189CD00A67AC0 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280DFC19A189CD00A67AC0 /* PostsTableViewController.swift */; };
 		03280DFF19A1B47D00A67AC0 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280DFE19A1B47D00A67AC0 /* PostTableViewCell.swift */; };
-		03280E0819A3086600A67AC0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 03280E0719A3086600A67AC0 /* README.md */; };
 		0346C5F519AD78AC00F86282 /* ViewPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346C5F419AD78AC00F86282 /* ViewPostTableViewCell.swift */; };
 		036F7C3619B2A7EB001C31B1 /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036F7C3519B2A7EB001C31B1 /* DismissSegue.swift */; };
 		036F7C3C19B3ED6F001C31B1 /* TMReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 036F7C3B19B3ED6F001C31B1 /* TMReachability.m */; };
@@ -385,7 +384,6 @@
 				036F7C3C19B3ED6F001C31B1 /* TMReachability.m in Sources */,
 				03280DDA19A1842600A67AC0 /* MessagePosting.xcdatamodeld in Sources */,
 				036F7C3619B2A7EB001C31B1 /* DismissSegue.swift in Sources */,
-				03280E0819A3086600A67AC0 /* README.md in Sources */,
 				03186AB619B7F2560046AF93 /* Post.swift in Sources */,
 				0399F06219B7EA40004846AD /* NetworkQueue.swift in Sources */,
 				03280DD719A1842500A67AC0 /* AppDelegate.swift in Sources */,
