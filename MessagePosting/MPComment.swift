@@ -47,10 +47,6 @@ class MPComment {
         return pfComment
     }
     
-    func commentAndPostInParseFormat() -> (PFObject, PFObject) {
-        return (self.toParseFormat(), self.pfPost)
-    }
-    
     // MARK: - Core data
     
     func saveToCoreData(post: Post) -> Comment? {
@@ -131,6 +127,31 @@ class MPComment {
                 }
             }
         }
+    }
+    
+    func saveToParse(successBlock:(String) -> Void, errorBlock:(NSError!) -> Void) {
+        // We save the post, because it automatically saves the comment
+        
+        self.pfPost.saveInBackgroundWithBlock({
+            (success: Bool!, error:NSError!) -> Void in
+            if success! {
+                if let parseId = self.toParseFormat().objectForKey(parseKeyNameId) as String! {
+                    // save the comment to core data
+                    self.id = parseId
+                    self.saveToCoreData(self.post)
+                    trackComposeComment(self.text, self.createdAt)
+                    
+                    // update the post
+                    MPPost.update(self.post, date: self.updatedAt)
+                    
+                    // fire success
+                    successBlock(parseId)
+                }
+            } else {
+                println("failure to upload")
+                errorBlock(error)
+            }
+        })
     }
 
 }

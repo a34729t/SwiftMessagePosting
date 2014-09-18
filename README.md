@@ -1,17 +1,22 @@
 ### TODO
 
-
+Comments:
 * Refactor MPPost and MPComment (and the associated code in EditPostVC, which should be in the model objects)
 * When typing a comment, does not always immediately show in ViewPostTVC
-* Figure out the network queue, which we really do want to use!
 * Rename ViewPostTVC to PostDetailTVC
 
+Networking:
+* Figure out the network queue, which we really do want to use!
+* Add reachability check on post/comment creation (once network stuff works)
 
-* Comment limit is 1000 right now... pagination?
+Future:
+* Need some sort of custom UITextView with proper text alignment, size, placeholder text, etc.
 * Make UI suck less in general
+* Comment limit is 1000 right now... pagination?
 * Fix up the post details page - comment background should be different
 * What should go in the menu?
-* Add reachability check on post/comment creation
+* Investigate finding/writing PFObject category that is NSCoding/CoreData compatible.
+
 
 ### DONE
 

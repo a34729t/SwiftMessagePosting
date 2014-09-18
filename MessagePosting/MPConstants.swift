@@ -18,6 +18,7 @@ let parseClassNameComment = "Comment"
 let parseKeyNameId = "id"
 let parseKeyNameParent = "parent" // for the children in a one-to-many relationship
 
+// TODO: May want to have separate keys for post and for comment
 let parseKeyNamePost = "post"
 let parseKeyNameText = "text"
 let parseKeyNameDate = "updatedAt"

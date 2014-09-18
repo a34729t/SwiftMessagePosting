@@ -76,29 +76,18 @@ class EditPostViewController: UIViewController, UITextViewDelegate {
     
     func addCommentToPost() {
         if let realPost:Post = self.post {
-            // TODO: Move this into Model object
-            
             let comment = MPComment(text: textView.text, post: realPost, date: NSDate()) // Add to post inside
-            let (pfComment, pfPost):(PFObject, PFObject) = comment.commentAndPostInParseFormat() as (PFObject, PFObject)
-            
-            pfPost.saveInBackgroundWithBlock({
-                (success: Bool!, error:NSError!) -> Void in
-                if success! {
-                    if let parseId = pfComment.objectForKey(parseKeyNameId) as String! {
-                        // save the comment to core data
-                        comment.id = parseId
-                        comment.saveToCoreData(realPost)
-                        trackComposeComment(comment.text, comment.createdAt)
-                        
-                        // update the post
-                        MPPost.update(realPost, date: comment.updatedAt)
 
-                    }
-                } else {
-                    println("failure to upload")
-                }
-            })
+            let successBlock = {(objectId parseId:String) -> Void in
+                // TODO
+            }
+            let errorBlock = {(error:NSError!) -> Void in
+                println("post: failure to upload")
+            }
             
+            comment.saveToParse(successBlock, errorBlock)
+        } else {
+            // TODO another serious error
         }
     }
     

@@ -32,31 +32,6 @@ class MPPost {
             assertionFailure(":(")
         }
     }
-    
-    private func toParseFormat() -> PFObject {
-        var post = PFObject(className:parseClassNamePost)
-        post[parseKeyNameText] = self.text
-        post[parseKeyNameComments] = []
-        if self.numberComments == 0 {
-            post[parseKeyNameNumberComments] = self.numberComments
-        }
-        return post
-    }
-    
-    func saveToParse(successBlock:(String) -> Void, errorBlock:(NSError!) -> Void) {
-        let pfObj:PFObject = self.toParseFormat()
-        // ParseObjectTask(pfObject: pfObj, successBlock, errorBlock)
-        
-        pfObj.saveInBackgroundWithBlock {(success: Bool!, error:NSError!) -> Void in
-            if success! {
-                successBlock(pfObj.objectId)
-                self.id = pfObj.objectId
-                self.saveToCoreData()
-            } else {
-                errorBlock(error)
-            }
-        }
-    }
 
     // MARK: - Core data
     
@@ -164,6 +139,31 @@ class MPPost {
                     
                     MPPost.findPostInCoreData(post, successBlock, failureBlock: failureBlock, errorBlock: errorBlock)
                 }
+            }
+        }
+    }
+    
+    private func toParseFormat() -> PFObject {
+        var post = PFObject(className:parseClassNamePost)
+        post[parseKeyNameText] = self.text
+        post[parseKeyNameComments] = []
+        if self.numberComments == 0 {
+            post[parseKeyNameNumberComments] = self.numberComments
+        }
+        return post
+    }
+    
+    func saveToParse(successBlock:(String) -> Void, errorBlock:(NSError!) -> Void) {
+        let pfObj:PFObject = self.toParseFormat()
+        // ParseObjectTask(pfObject: pfObj, successBlock, errorBlock)
+        
+        pfObj.saveInBackgroundWithBlock {(success: Bool!, error:NSError!) -> Void in
+            if success! {
+                successBlock(pfObj.objectId)
+                self.id = pfObj.objectId
+                self.saveToCoreData()
+            } else {
+                errorBlock(error)
             }
         }
     }
