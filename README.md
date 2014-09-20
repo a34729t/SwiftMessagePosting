@@ -6,6 +6,7 @@ Comments:
 Networking:
 * Figure out the network queue, which we really do want to use!
 * Add reachability check on post/comment creation (once network stuff works)
+* Make sure to attempt content load before page loads
 
 Future:
 * Need some sort of custom UITextView with proper text alignment, size, placeholder text, etc.

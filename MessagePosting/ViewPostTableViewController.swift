@@ -31,8 +31,8 @@ class ViewPostTableViewController: UITableViewController, NSFetchedResultsContro
         tableView.rowHeight=UITableViewAutomaticDimension
         
         self.refreshControl = UIRefreshControl()
-        self.refreshControl.addTarget(self, action: Selector("pullToRefresh"), forControlEvents: UIControlEvents.ValueChanged)
-        self.tableView.addSubview(self.refreshControl)
+        self.refreshControl!.addTarget(self, action: Selector("pullToRefresh"), forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(self.refreshControl!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,13 +56,13 @@ class ViewPostTableViewController: UITableViewController, NSFetchedResultsContro
     
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 2
     }
 
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         switch section {
@@ -70,14 +70,14 @@ class ViewPostTableViewController: UITableViewController, NSFetchedResultsContro
             return 1
         default:
             if let realPost:Post = post {
-                return fetchedResultController.sections[0].numberOfObjects
+                return fetchedResultController.sections![0].numberOfObjects
             } else {
                 return 0
             }
         }
     }
     
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 1:
             let cell = tableView.dequeueReusableCellWithIdentifier(commentCellIdentifier, forIndexPath: indexPath) as UITableViewCell
@@ -85,7 +85,7 @@ class ViewPostTableViewController: UITableViewController, NSFetchedResultsContro
             // We have to modify our FetchedResultsController (see http://stackoverflow.com/questions/11540292/weird-behaviour-with-fetchedresultscontroller-in-numberofrowsinsection)
             let frcIndexPath = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section - 1)
             let comment = fetchedResultController.objectAtIndexPath(frcIndexPath) as Comment
-            cell.textLabel.text = comment.text
+            cell.textLabel?.text = comment.text
             return cell
         default:
             let cell = tableView.dequeueReusableCellWithIdentifier(postViewCellIdentifier, forIndexPath: indexPath) as ViewPostTableViewCell
@@ -96,12 +96,10 @@ class ViewPostTableViewController: UITableViewController, NSFetchedResultsContro
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        if let realIdentifier:String = segue?.identifier {
-            if realIdentifier == "comment" {
-                let editPostVC = segue.destinationViewController as EditPostViewController
-                editPostVC.post = self.post
-            }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "comment" {
+            let editPostVC = segue.destinationViewController as EditPostViewController
+            editPostVC.post = self.post
         }
     }
     
@@ -112,7 +110,7 @@ class ViewPostTableViewController: UITableViewController, NSFetchedResultsContro
     }
     
     func getFetchedResultController() -> NSFetchedResultsController {
-        fetchedResultController = NSFetchedResultsController(fetchRequest: taskFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultController = NSFetchedResultsController(fetchRequest: taskFetchRequest(), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
         return fetchedResultController
     }
     

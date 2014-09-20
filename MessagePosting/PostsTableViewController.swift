@@ -35,8 +35,8 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
         maybeDoNUX()
         
         self.refreshControl = UIRefreshControl()
-        self.refreshControl.addTarget(self, action: Selector("pullToRefresh"), forControlEvents: UIControlEvents.ValueChanged)
-        self.tableView.addSubview(self.refreshControl)
+        self.refreshControl!.addTarget(self, action: Selector("pullToRefresh"), forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(self.refreshControl!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,15 +61,15 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
-        return fetchedResultController.sections.count
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return fetchedResultController.sections!.count
     }
     
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        return fetchedResultController.sections[section].numberOfObjects
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return fetchedResultController.sections![section].numberOfObjects
     }
     
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell? {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as PostTableViewCell
         let post = fetchedResultController.objectAtIndexPath(indexPath) as Post
         cell.postTextLabel.text = post.text
@@ -79,12 +79,12 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
         return cell
     }
     
-    override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return false
     }
     
     // TODO: remove this?
-    override func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
             let managedObject:NSManagedObject = fetchedResultController.objectAtIndexPath(indexPath) as NSManagedObject
             managedObjectContext?.deleteObject(managedObject)
@@ -104,17 +104,15 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
     
     // MARK: - Navigation
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        if let realIdentifier:String = segue?.identifier {
-            if realIdentifier == "select" {
-                let cell = sender as PostTableViewCell
-                let indexPath = tableView.indexPathForCell(cell)
-                let post = fetchedResultController.objectAtIndexPath(indexPath) as Post
-                MPComment.getCommentsForPost(post)
-                
-                let viewPostTVC = segue.destinationViewController as ViewPostTableViewController
-                viewPostTVC.post = post
-            }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "select" {
+            let cell = sender as PostTableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            let post = fetchedResultController.objectAtIndexPath(indexPath!) as Post
+            MPComment.getCommentsForPost(post)
+            
+            let viewPostTVC = segue.destinationViewController as ViewPostTableViewController
+            viewPostTVC.post = post
         }
     }
 
@@ -125,7 +123,7 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
     }
     
     func getFetchedResultController() -> NSFetchedResultsController {
-        fetchedResultController = NSFetchedResultsController(fetchRequest: taskFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultController = NSFetchedResultsController(fetchRequest: taskFetchRequest(), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
         return fetchedResultController
     }
     

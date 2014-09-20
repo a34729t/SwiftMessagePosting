@@ -99,7 +99,7 @@ class EditPostViewController: UIViewController, UITextViewDelegate {
             } else {
                 createPost()
             }
-            navigationController.popViewControllerAnimated(true)
+            navigationController!.popViewControllerAnimated(true)
         } else {
             // Put up an alert view
             var alert = UIAlertController(title: "Warning", message: "You gotta type something!", preferredStyle: UIAlertControllerStyle.Alert)

@@ -53,8 +53,8 @@ class MPPost {
         
         if let validId = self.id {
             let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
-            let entityDescripition = NSEntityDescription.entityForName(coreDataEntityPost, inManagedObjectContext: managedObjectContext)
-            var post = Post(entity: entityDescripition, insertIntoManagedObjectContext: managedObjectContext)
+            let entityDescripition = NSEntityDescription.entityForName(coreDataEntityPost, inManagedObjectContext: managedObjectContext!)
+            var post = Post(entity: entityDescripition!, insertIntoManagedObjectContext: managedObjectContext!)
             post.text = self.text
             post.createdAt = self.createdAt
             post.numberComments = self.numberComments

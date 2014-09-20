@@ -57,8 +57,8 @@ class MPComment {
         
         if let validId = self.id {
             let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
-            let entityDescripition = NSEntityDescription.entityForName(coreDataEntityComment, inManagedObjectContext: managedObjectContext)
-            let comment = Comment(entity: entityDescripition, insertIntoManagedObjectContext: managedObjectContext)
+            let entityDescripition = NSEntityDescription.entityForName(coreDataEntityComment, inManagedObjectContext: managedObjectContext!)
+            let comment = Comment(entity: entityDescripition!, insertIntoManagedObjectContext: managedObjectContext!)
             comment.text = self.text
             comment.createdAt = self.createdAt
             comment.updatedAt = self.updatedAt

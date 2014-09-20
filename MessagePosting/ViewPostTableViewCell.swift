@@ -14,7 +14,7 @@ class ViewPostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postTextLabel: UILabel!
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String) {
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.backgroundColor = lightGreyColor
