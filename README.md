@@ -1,13 +1,11 @@
 ### TODO
 
 * Need some sort of custom UITextView with proper text alignment, size, placeholder text, etc.
-
-
+* Fix up the post details page - comment background should be different
+* Make UI suck less in general
 
 Future:
-* Make UI suck less in general
-* Comment limit is 1000 right now... pagination?
-* Fix up the post details page - comment background should be different
+* Comment limit is 1000 right now... pagination/automatic move to bottm/next 100?
 * What should go in the menu?
 * Investigate finding/writing PFObject category that is NSCoding/CoreData compatible.
 
@@ -45,3 +43,5 @@ Networking:
 - XCode 6b6 developer certs fixed
 
 ### NOTE
+
+Using Morten Bogh's NibDesignable class to do live rendering on UIElements. Super unstable and un-debuggable, until Apple decides to fix one of the major Xcode features they advertised.
