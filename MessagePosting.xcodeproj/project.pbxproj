@@ -19,6 +19,7 @@
 		03280DED19A1842600A67AC0 /* MessagePostingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280DEC19A1842600A67AC0 /* MessagePostingTests.swift */; };
 		03280DFD19A189CD00A67AC0 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280DFC19A189CD00A67AC0 /* PostsTableViewController.swift */; };
 		03280DFF19A1B47D00A67AC0 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280DFE19A1B47D00A67AC0 /* PostTableViewCell.swift */; };
+		033A641219CE590000E4F7ED /* NibDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A641119CE590000E4F7ED /* NibDesignable.swift */; };
 		0346C5F519AD78AC00F86282 /* PostDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346C5F419AD78AC00F86282 /* PostDetailTableViewCell.swift */; };
 		036F7C3619B2A7EB001C31B1 /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036F7C3519B2A7EB001C31B1 /* DismissSegue.swift */; };
 		036F7C3C19B3ED6F001C31B1 /* TMReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 036F7C3B19B3ED6F001C31B1 /* TMReachability.m */; };
@@ -73,6 +74,7 @@
 		03280DFC19A189CD00A67AC0 /* PostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
 		03280DFE19A1B47D00A67AC0 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		03280E0719A3086600A67AC0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		033A641119CE590000E4F7ED /* NibDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibDesignable.swift; sourceTree = "<group>"; };
 		0346C5F419AD78AC00F86282 /* PostDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewCell.swift; sourceTree = "<group>"; };
 		036F7C3519B2A7EB001C31B1 /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 		036F7C3919B3ED6F001C31B1 /* MessagePosting-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MessagePosting-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -226,8 +228,17 @@
 				0346C5F419AD78AC00F86282 /* PostDetailTableViewCell.swift */,
 				0378B1D919AEDD3400658607 /* EditPostViewController.swift */,
 				036F7C3519B2A7EB001C31B1 /* DismissSegue.swift */,
+				033A641019CE568600E4F7ED /* Custom UI */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		033A641019CE568600E4F7ED /* Custom UI */ = {
+			isa = PBXGroup;
+			children = (
+				033A641119CE590000E4F7ED /* NibDesignable.swift */,
+			);
+			name = "Custom UI";
 			sourceTree = "<group>";
 		};
 		036F7C3419B2A0D5001C31B1 /* Network */ = {
@@ -393,6 +404,7 @@
 				03186ABB19B829550046AF93 /* MPComment.swift in Sources */,
 				03C73DF519B505F6003AA10E /* Analytics.swift in Sources */,
 				03280DFF19A1B47D00A67AC0 /* PostTableViewCell.swift in Sources */,
+				033A641219CE590000E4F7ED /* NibDesignable.swift in Sources */,
 				03186ABD19BD65AD0046AF93 /* MPConstants.swift in Sources */,
 				03186AB419B7F2560046AF93 /* Comment.swift in Sources */,
 				0346C5F519AD78AC00F86282 /* PostDetailTableViewCell.swift in Sources */,
