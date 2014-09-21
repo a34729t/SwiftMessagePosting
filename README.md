@@ -1,7 +1,6 @@
 ### TODO
 
-Comments:
-* Rename ViewPostTVC to PostDetailTVC
+
 
 Networking:
 * Figure out the network queue, which we really do want to use!
@@ -15,6 +14,9 @@ Future:
 * Fix up the post details page - comment background should be different
 * What should go in the menu?
 * Investigate finding/writing PFObject category that is NSCoding/CoreData compatible.
+
+Refactor:
+* Rename ViewPostTVC to PostDetailTVC (Swift cannot do refactoring via Xcode yet)
 
 
 ### DONE
