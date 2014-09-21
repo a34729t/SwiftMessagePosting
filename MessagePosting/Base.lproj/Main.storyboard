@@ -150,13 +150,13 @@
         <!--...-->
         <scene sceneID="pWH-gT-auj">
             <objects>
-                <tableViewController id="YwK-8a-ZO5" customClass="ViewPostTableViewController" customModule="MessagePosting" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="YwK-8a-ZO5" customClass="PostDetailTableViewController" customModule="MessagePosting" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Y6i-nO-X8a">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostViewCell" id="5bD-in-jX2" customClass="ViewPostTableViewCell" customModule="MessagePosting" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostViewCell" id="5bD-in-jX2" customClass="PostDetailTableViewCell" customModule="MessagePosting" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5bD-in-jX2" id="Snn-Jt-SX5">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -179,7 +179,7 @@
                                     <outlet property="postTextLabel" destination="inT-NR-qZJ" id="o4c-hC-O7D"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" id="hVN-ig-Kah">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" id="hVN-ig-Kah" customClass="PostDetailTableViewCell" customModule="MessagePosting" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hVN-ig-Kah" id="Wn5-Kw-IQH">
                                     <autoresizingMask key="autoresizingMask"/>

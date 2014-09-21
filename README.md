@@ -1,26 +1,24 @@
 ### TODO
 
+* Need some sort of custom UITextView with proper text alignment, size, placeholder text, etc.
 
 
-Networking:
-* Figure out the network queue, which we really do want to use!
-* Add reachability check on post/comment creation (once network stuff works)
-* Make sure to attempt content load before page loads
 
 Future:
-* Need some sort of custom UITextView with proper text alignment, size, placeholder text, etc.
 * Make UI suck less in general
 * Comment limit is 1000 right now... pagination?
 * Fix up the post details page - comment background should be different
 * What should go in the menu?
 * Investigate finding/writing PFObject category that is NSCoding/CoreData compatible.
 
-Refactor:
-* Rename ViewPostTVC to PostDetailTVC (Swift cannot do refactoring via Xcode yet)
-
+Networking:
+* Figure out the network queue, which we really do want to use! Use network queue to limit number of requests per second (ie don't update posts every ptr necessarily)
+* Add reachability check on post/comment creation (once network stuff works)
+* Make sure to attempt content load before page loads
 
 ### DONE
 
+- Rename ViewPostTVC to PostDetailTVC (Swift cannot do refactoring via Xcode yet)
 - When typing a comment, does not always immediately show in ViewPostTVC
 - Post needs to update its updatedAt value and use this in fetchedresultscontroller
 - Comment doesn't show up in post detail view!???
@@ -33,17 +31,17 @@ Refactor:
 - Add pull to refresh to main table view?
 - Figure out core data dedup on load from server
 - We have to not create a coredata object until the server says yes, at which case it's go time'
-* Test reachability
-* Add simple analytics to parse
+- Test reachability
+- Add simple analytics to parse
 -- Compose post & comment
 -- Time in app
 -- Launch
-* Parse chosen for server-side
-* Figure out reachability in swift (bridging header )
-* Create basic NUX VC (with custom dismiss segue)
-* Add a menu button from main screen
-* Add initial hook for NUX
-* Create post/comment VC should be the same one (to avoid duplicated code)
-* XCode 6b6 developer certs fixed
+- Parse chosen for server-side
+- Figure out reachability in swift (bridging header )
+- Create basic NUX VC (with custom dismiss segue)
+- Add a menu button from main screen
+- Add initial hook for NUX
+- Create post/comment VC should be the same one (to avoid duplicated code)
+- XCode 6b6 developer certs fixed
 
 ### NOTE

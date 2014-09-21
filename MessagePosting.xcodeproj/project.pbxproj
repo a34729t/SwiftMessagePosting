@@ -19,7 +19,7 @@
 		03280DED19A1842600A67AC0 /* MessagePostingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280DEC19A1842600A67AC0 /* MessagePostingTests.swift */; };
 		03280DFD19A189CD00A67AC0 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280DFC19A189CD00A67AC0 /* PostsTableViewController.swift */; };
 		03280DFF19A1B47D00A67AC0 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280DFE19A1B47D00A67AC0 /* PostTableViewCell.swift */; };
-		0346C5F519AD78AC00F86282 /* ViewPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346C5F419AD78AC00F86282 /* ViewPostTableViewCell.swift */; };
+		0346C5F519AD78AC00F86282 /* PostDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346C5F419AD78AC00F86282 /* PostDetailTableViewCell.swift */; };
 		036F7C3619B2A7EB001C31B1 /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036F7C3519B2A7EB001C31B1 /* DismissSegue.swift */; };
 		036F7C3C19B3ED6F001C31B1 /* TMReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 036F7C3B19B3ED6F001C31B1 /* TMReachability.m */; };
 		036F7C3E19B3EDBF001C31B1 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 036F7C3D19B3EDBF001C31B1 /* LICENSE.txt */; };
@@ -42,7 +42,7 @@
 		03C73DF119B401F3003AA10E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C73DF019B401F3003AA10E /* StoreKit.framework */; };
 		03C73DF319B401FA003AA10E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C73DF219B401FA003AA10E /* SystemConfiguration.framework */; };
 		03C73DF519B505F6003AA10E /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C73DF419B505F6003AA10E /* Analytics.swift */; };
-		03CF1E6019A90C8F009739F5 /* ViewPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CF1E5F19A90C8F009739F5 /* ViewPostTableViewController.swift */; };
+		03CF1E6019A90C8F009739F5 /* PostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CF1E5F19A90C8F009739F5 /* PostDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +73,7 @@
 		03280DFC19A189CD00A67AC0 /* PostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
 		03280DFE19A1B47D00A67AC0 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		03280E0719A3086600A67AC0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		0346C5F419AD78AC00F86282 /* ViewPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPostTableViewCell.swift; sourceTree = "<group>"; };
+		0346C5F419AD78AC00F86282 /* PostDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewCell.swift; sourceTree = "<group>"; };
 		036F7C3519B2A7EB001C31B1 /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 		036F7C3919B3ED6F001C31B1 /* MessagePosting-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MessagePosting-Bridging-Header.h"; sourceTree = "<group>"; };
 		036F7C3A19B3ED6F001C31B1 /* TMReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMReachability.h; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		03C73DF019B401F3003AA10E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		03C73DF219B401FA003AA10E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		03C73DF419B505F6003AA10E /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
-		03CF1E5F19A90C8F009739F5 /* ViewPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPostTableViewController.swift; sourceTree = "<group>"; };
+		03CF1E5F19A90C8F009739F5 /* PostDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,8 +222,8 @@
 				03280DDD19A1842600A67AC0 /* Main.storyboard */,
 				03280DFC19A189CD00A67AC0 /* PostsTableViewController.swift */,
 				03280DFE19A1B47D00A67AC0 /* PostTableViewCell.swift */,
-				03CF1E5F19A90C8F009739F5 /* ViewPostTableViewController.swift */,
-				0346C5F419AD78AC00F86282 /* ViewPostTableViewCell.swift */,
+				03CF1E5F19A90C8F009739F5 /* PostDetailTableViewController.swift */,
+				0346C5F419AD78AC00F86282 /* PostDetailTableViewCell.swift */,
 				0378B1D919AEDD3400658607 /* EditPostViewController.swift */,
 				036F7C3519B2A7EB001C31B1 /* DismissSegue.swift */,
 			);
@@ -387,7 +387,7 @@
 				03186AB619B7F2560046AF93 /* Post.swift in Sources */,
 				0399F06219B7EA40004846AD /* NetworkQueue.swift in Sources */,
 				03280DD719A1842500A67AC0 /* AppDelegate.swift in Sources */,
-				03CF1E6019A90C8F009739F5 /* ViewPostTableViewController.swift in Sources */,
+				03CF1E6019A90C8F009739F5 /* PostDetailTableViewController.swift in Sources */,
 				03280DFD19A189CD00A67AC0 /* PostsTableViewController.swift in Sources */,
 				03186AB819B819630046AF93 /* MPPost.swift in Sources */,
 				03186ABB19B829550046AF93 /* MPComment.swift in Sources */,
@@ -395,7 +395,7 @@
 				03280DFF19A1B47D00A67AC0 /* PostTableViewCell.swift in Sources */,
 				03186ABD19BD65AD0046AF93 /* MPConstants.swift in Sources */,
 				03186AB419B7F2560046AF93 /* Comment.swift in Sources */,
-				0346C5F519AD78AC00F86282 /* ViewPostTableViewCell.swift in Sources */,
+				0346C5F519AD78AC00F86282 /* PostDetailTableViewCell.swift in Sources */,
 				0378B1DA19AEDD3400658607 /* EditPostViewController.swift in Sources */,
 				03C73DDB19B40148003AA10E /* Constants.swift in Sources */,
 				036F7C4119B3F228001C31B1 /* Reachability.swift in Sources */,

@@ -111,8 +111,8 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
             let post = fetchedResultController.objectAtIndexPath(indexPath!) as Post
             MPComment.getCommentsForPost(post)
             
-            let viewPostTVC = segue.destinationViewController as ViewPostTableViewController
-            viewPostTVC.post = post
+            let postDetailTVC = segue.destinationViewController as PostDetailTableViewController
+            postDetailTVC.post = post
         }
     }
 
