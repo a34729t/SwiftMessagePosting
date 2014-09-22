@@ -150,6 +150,14 @@
 			name = "Model Objects";
 			sourceTree = "<group>";
 		};
+		0318C99019CFA81400575261 /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				036F7C3519B2A7EB001C31B1 /* DismissSegue.swift */,
+			);
+			name = Segues;
+			sourceTree = "<group>";
+		};
 		03280DC819A1842500A67AC0 = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +195,7 @@
 			children = (
 				03280DD619A1842500A67AC0 /* AppDelegate.swift */,
 				03C73DDA19B40148003AA10E /* Constants.swift */,
+				033A641119CE590000E4F7ED /* NibDesignable.swift */,
 				036F7C3919B3ED6F001C31B1 /* MessagePosting-Bridging-Header.h */,
 				03280DD519A1842500A67AC0 /* Info.plist */,
 				03280DE019A1842600A67AC0 /* Images.xcassets */,
@@ -231,20 +240,19 @@
 				03CF1E5F19A90C8F009739F5 /* PostDetailTableViewController.swift */,
 				0346C5F419AD78AC00F86282 /* PostDetailTableViewCell.swift */,
 				0378B1D919AEDD3400658607 /* EditPostViewController.swift */,
-				036F7C3519B2A7EB001C31B1 /* DismissSegue.swift */,
-				033A641019CE568600E4F7ED /* Custom UI */,
+				033A641019CE568600E4F7ED /* Views */,
+				0318C99019CFA81400575261 /* Segues */,
 			);
 			name = UI;
 			sourceTree = "<group>";
 		};
-		033A641019CE568600E4F7ED /* Custom UI */ = {
+		033A641019CE568600E4F7ED /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				033A641119CE590000E4F7ED /* NibDesignable.swift */,
 				0364970419CF72790059A88D /* ImprovedTextView.swift */,
 				0364970619CF72850059A88D /* ImprovedTextView.xib */,
 			);
-			name = "Custom UI";
+			name = Views;
 			sourceTree = "<group>";
 		};
 		036F7C3419B2A0D5001C31B1 /* Network */ = {

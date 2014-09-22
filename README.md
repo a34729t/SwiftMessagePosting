@@ -1,7 +1,7 @@
 ### TODO
 
-* Need some sort of custom UITextView with proper text alignment, size, placeholder text, etc.
-* Fix up the post details page - comment background should be different
+* Xib for posttableviewcell
+* Xib for postdetailtableviewcell
 * Make UI suck less in general
 
 Future:
@@ -16,6 +16,7 @@ Networking:
 
 ### DONE
 
+- Need some sort of custom UITextView with proper text alignment, size, placeholder text, etc.
 - Rename ViewPostTVC to PostDetailTVC (Swift cannot do refactoring via Xcode yet)
 - When typing a comment, does not always immediately show in ViewPostTVC
 - Post needs to update its updatedAt value and use this in fetchedresultscontroller
