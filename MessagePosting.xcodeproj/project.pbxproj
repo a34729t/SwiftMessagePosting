@@ -21,6 +21,8 @@
 		03280DFF19A1B47D00A67AC0 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280DFE19A1B47D00A67AC0 /* PostTableViewCell.swift */; };
 		033A641219CE590000E4F7ED /* NibDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A641119CE590000E4F7ED /* NibDesignable.swift */; };
 		0346C5F519AD78AC00F86282 /* PostDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346C5F419AD78AC00F86282 /* PostDetailTableViewCell.swift */; };
+		0364970519CF72790059A88D /* ImprovedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0364970419CF72790059A88D /* ImprovedTextView.swift */; };
+		0364970719CF72850059A88D /* ImprovedTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0364970619CF72850059A88D /* ImprovedTextView.xib */; };
 		036F7C3619B2A7EB001C31B1 /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036F7C3519B2A7EB001C31B1 /* DismissSegue.swift */; };
 		036F7C3C19B3ED6F001C31B1 /* TMReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 036F7C3B19B3ED6F001C31B1 /* TMReachability.m */; };
 		036F7C3E19B3EDBF001C31B1 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 036F7C3D19B3EDBF001C31B1 /* LICENSE.txt */; };
@@ -76,6 +78,8 @@
 		03280E0719A3086600A67AC0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		033A641119CE590000E4F7ED /* NibDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibDesignable.swift; sourceTree = "<group>"; };
 		0346C5F419AD78AC00F86282 /* PostDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewCell.swift; sourceTree = "<group>"; };
+		0364970419CF72790059A88D /* ImprovedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImprovedTextView.swift; sourceTree = "<group>"; };
+		0364970619CF72850059A88D /* ImprovedTextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImprovedTextView.xib; sourceTree = "<group>"; };
 		036F7C3519B2A7EB001C31B1 /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 		036F7C3919B3ED6F001C31B1 /* MessagePosting-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MessagePosting-Bridging-Header.h"; sourceTree = "<group>"; };
 		036F7C3A19B3ED6F001C31B1 /* TMReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMReachability.h; sourceTree = "<group>"; };
@@ -237,6 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				033A641119CE590000E4F7ED /* NibDesignable.swift */,
+				0364970419CF72790059A88D /* ImprovedTextView.swift */,
+				0364970619CF72850059A88D /* ImprovedTextView.xib */,
 			);
 			name = "Custom UI";
 			sourceTree = "<group>";
@@ -375,6 +381,7 @@
 				036F7C3E19B3EDBF001C31B1 /* LICENSE.txt in Resources */,
 				03280DDF19A1842600A67AC0 /* Main.storyboard in Resources */,
 				03280DE119A1842600A67AC0 /* Images.xcassets in Resources */,
+				0364970719CF72850059A88D /* ImprovedTextView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +402,7 @@
 				036F7C3C19B3ED6F001C31B1 /* TMReachability.m in Sources */,
 				03280DDA19A1842600A67AC0 /* MessagePosting.xcdatamodeld in Sources */,
 				036F7C3619B2A7EB001C31B1 /* DismissSegue.swift in Sources */,
+				0364970519CF72790059A88D /* ImprovedTextView.swift in Sources */,
 				03186AB619B7F2560046AF93 /* Post.swift in Sources */,
 				0399F06219B7EA40004846AD /* NetworkQueue.swift in Sources */,
 				03280DD719A1842500A67AC0 /* AppDelegate.swift in Sources */,

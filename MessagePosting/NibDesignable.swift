@@ -35,6 +35,8 @@ public class NibDesignable: UIView {
     
     // MARK: - NSCoding
     required public init(coder aDecoder: NSCoder) {
+        // WARNING: Overriding this in the subclass causes some serious problems
+        
         super.init(coder: aDecoder)
         self.setupNib()
     }

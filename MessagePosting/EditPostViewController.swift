@@ -11,9 +11,8 @@ import UIKit
 
 class EditPostViewController: UIViewController, UITextViewDelegate {
     
-    @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var textFieldLengthLabel: UILabel!
-    //    @IBOutlet weak var placeholderTextLabel: UILabel!
+    @IBOutlet weak var improvedTextView: ImprovedTextView!
+    @IBOutlet weak var textViewBottomLayoutGuideConstraint: NSLayoutConstraint!
     
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
     
@@ -24,7 +23,23 @@ class EditPostViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textFieldLengthLabel.text = "\(maxLength) characters left"
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Listen for changes to keyboard visibility so that we can adjust the text view accordingly.
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: "handleKeyboardWillShowNotification:", name: UIKeyboardWillShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: "handleKeyboardWillHideNotification:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        notificationCenter.removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,37 +47,8 @@ class EditPostViewController: UIViewController, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func textView(textView: UITextView!, shouldChangeTextInRange range: NSRange, replacementText text: String!) -> Bool {
-        let oldText = textView.text as NSString // hack cause string length stuff is garbage in swift
-        let newText = oldText.stringByReplacingCharactersInRange(range, withString: text) as NSString
-        
-        // Dismiss keyboard if return
-        if text == "\n" {
-            self.view.endEditing(true)
-        }
-        
-        // Enable placeholder text if no text entered
-        /*
-        if newText.length == 0 {
-        placeholderTextLabel.hidden = false
-        } else {
-        placeholderTextLabel.hidden = true
-        }
-        */
-        
-        // Truncate text entered if too long
-        if newText.length <= maxLength {
-            textFieldLengthLabel.text = "\(maxLength - newText.length) characters left"
-            return true
-        } else {
-            textFieldLengthLabel.text = "0 characters left"
-            textView.text = newText.substringToIndex(maxLength)
-            return false
-        }
-    }
-    
     func createPost() {
-        let post = MPPost(text: textView.text)
+        let post = MPPost(text: improvedTextView.text)
         
         let successBlock = {(objectId parseId:String) -> Void in
             // TODO
@@ -76,7 +62,7 @@ class EditPostViewController: UIViewController, UITextViewDelegate {
     
     func addCommentToPost() {
         if let realPost:Post = self.post {
-            let comment = MPComment(text: textView.text, post: realPost, date: NSDate()) // Add to post inside
+            let comment = MPComment(text: improvedTextView.text, post: realPost, date: NSDate()) // Add to post inside
 
             let successBlock = {(objectId parseId:String) -> Void in
                 // TODO
@@ -92,7 +78,7 @@ class EditPostViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func done(sender: AnyObject) {
-        let textLength = countElements(textView.text!)
+        let textLength = countElements(improvedTextView.text)
         if  minLength <= textLength && textLength <= maxLength  {
             if let realPost:Post = self.post {
                 addCommentToPost()
@@ -106,6 +92,47 @@ class EditPostViewController: UIViewController, UITextViewDelegate {
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
+    }
+    
+    // NOTE: Below is adapted from Apple: https://developer.apple.com/library/ios/samplecode/UICatalog/Listings/Swift_UICatalog_TextViewController_swift.html
+    
+    // MARK: Keyboard Event Notifications
+    
+    func handleKeyboardWillShowNotification(notification: NSNotification) {
+        keyboardWillChangeFrameWithNotification(notification, showsKeyboard: true)
+    }
+    
+    func handleKeyboardWillHideNotification(notification: NSNotification) {
+        keyboardWillChangeFrameWithNotification(notification, showsKeyboard: false)
+    }
+    
+    // MARK: Convenience
+    
+    func keyboardWillChangeFrameWithNotification(notification: NSNotification, showsKeyboard: Bool) {
+        let userInfo = notification.userInfo!
+        
+        let animationDuration: NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as NSNumber).doubleValue
+        
+        // Convert the keyboard frame from screen to view coordinates.
+        let keyboardScreenBeginFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as NSValue).CGRectValue()
+        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+        
+        let keyboardViewBeginFrame = view.convertRect(keyboardScreenBeginFrame, fromView: view.window)
+        let keyboardViewEndFrame = view.convertRect(keyboardScreenEndFrame, fromView: view.window)
+        let originDelta = keyboardViewEndFrame.origin.y - keyboardViewBeginFrame.origin.y
+        
+        // The text view should be adjusted, update the constant for this constraint.
+        textViewBottomLayoutGuideConstraint.constant -= originDelta
+        
+        view.setNeedsUpdateConstraints()
+        
+        UIView.animateWithDuration(animationDuration, delay: 0, options: .BeginFromCurrentState, animations: {
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+        
+        // Scroll to the selected text once the keyboard frame changes.
+        let selectedRange = self.improvedTextView.textView.selectedRange
+        self.improvedTextView.textView.scrollRangeToVisible(selectedRange)
     }
     
 }
