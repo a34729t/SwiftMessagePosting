@@ -10,23 +10,26 @@ import UIKit
 
 class PostDetailTableViewCell: UITableViewCell {
 
-    let lightGreyColor:UIColor = UIColor(white: 247/255, alpha: 1)
-    
-    @IBOutlet weak var postTextLabel: UILabel!
+    @IBOutlet weak var cellView: PostDetailTableViewCellView!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        self.backgroundColor = lightGreyColor
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
+}
+
+class PostDetailTableViewCellView: NibDesignable {
+    
+    @IBOutlet weak var postTextLabel: UILabel!
+    
+//    let lightGreyColor:UIColor = UIColor(white: 247/255, alpha: 1)
+    
 }

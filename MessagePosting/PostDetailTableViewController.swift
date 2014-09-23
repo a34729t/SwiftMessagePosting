@@ -80,17 +80,20 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 1:
-            let cell = tableView.dequeueReusableCellWithIdentifier(commentCellIdentifier, forIndexPath: indexPath) as UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(commentCellIdentifier, forIndexPath: indexPath) as PostDetailCommentTableViewCell
 
             // We have to modify our FetchedResultsController (see http://stackoverflow.com/questions/11540292/weird-behaviour-with-fetchedresultscontroller-in-numberofrowsinsection)
             let frcIndexPath = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section - 1)
             let comment = fetchedResultController.objectAtIndexPath(frcIndexPath) as Comment
-            cell.textLabel?.text = comment.text
+//            cell.textLabel?.text = comment.text
+            
+            cell.cellView.commentTextLabel.text = comment.text
+            
             return cell
         default:
             let cell = tableView.dequeueReusableCellWithIdentifier(postViewCellIdentifier, forIndexPath: indexPath) as PostDetailTableViewCell
             if let realPost:Post = self.post {
-                cell.postTextLabel.text = realPost.text
+                cell.cellView.postTextLabel.text = realPost.text
             }
             return cell
         }

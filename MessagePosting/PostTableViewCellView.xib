@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostTableViewCellView" customModule="MessagePosting" customModuleProvider="target">
+            <connections>
+                <outlet property="commentCountLabel" destination="W9A-cJ-jYn" id="S40-NY-wCx"/>
+                <outlet property="dateLabel" destination="uSG-ly-gdG" id="lWa-62-KW2"/>
+                <outlet property="postTextLabel" destination="ff8-u2-uRt" id="sDw-v7-CZV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="592" height="76"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014-08-24 at 7:11 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSG-ly-gdG">
+                    <rect key="frame" x="8" y="47" width="280" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="6zV-oJ-9HL"/>
+                        <constraint firstAttribute="width" constant="280" id="VKS-SW-O5e"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CommentIcon" translatesAutoresizingMaskIntoConstraints="NO" id="tee-rk-v9C">
+                    <rect key="frame" x="563" y="50" width="29" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="29" id="kV4-xZ-pN6"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9A-cJ-jYn">
+                    <rect key="frame" x="462" y="50" width="99" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="99" id="l7D-X7-DZz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insert random post here that talks about interesting things." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff8-u2-uRt">
+                    <rect key="frame" x="4" y="4" width="584" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="uSG-ly-gdG" firstAttribute="top" secondItem="ff8-u2-uRt" secondAttribute="bottom" constant="9" id="1h0-h2-mZX"/>
+                <constraint firstAttribute="bottom" secondItem="W9A-cJ-jYn" secondAttribute="bottom" constant="5" id="BMN-sn-keS"/>
+                <constraint firstItem="W9A-cJ-jYn" firstAttribute="top" secondItem="tee-rk-v9C" secondAttribute="top" id="IZl-nh-q27"/>
+                <constraint firstItem="ff8-u2-uRt" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OsU-7W-5o4"/>
+                <constraint firstItem="ff8-u2-uRt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="WT8-hQ-GZu"/>
+                <constraint firstItem="W9A-cJ-jYn" firstAttribute="top" secondItem="ff8-u2-uRt" secondAttribute="bottom" constant="12" id="ZL0-C8-hbU"/>
+                <constraint firstItem="uSG-ly-gdG" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottomMargin" id="bwT-lx-2kS"/>
+                <constraint firstItem="tee-rk-v9C" firstAttribute="leading" secondItem="W9A-cJ-jYn" secondAttribute="trailing" constant="2" id="c5Z-rr-S5s"/>
+                <constraint firstItem="ff8-u2-uRt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="gWB-sw-blk"/>
+                <constraint firstItem="uSG-ly-gdG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="l6t-4z-95q"/>
+                <constraint firstAttribute="trailing" secondItem="tee-rk-v9C" secondAttribute="trailing" id="lcy-qS-NEv"/>
+                <constraint firstItem="tee-rk-v9C" firstAttribute="bottom" secondItem="W9A-cJ-jYn" secondAttribute="bottom" id="s8m-ZI-IRP"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="751" y="85"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="CommentIcon" width="50" height="50"/>
+    </resources>
+</document>

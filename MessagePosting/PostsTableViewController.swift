@@ -72,9 +72,10 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as PostTableViewCell
         let post = fetchedResultController.objectAtIndexPath(indexPath) as Post
-        cell.postTextLabel.text = post.text
-        cell.dateLabel.text = dateFormatter.stringFromDate(post.createdAt)
-        cell.commentCountLabel.text = "\(post.numberComments)"
+        
+        cell.cellView.postTextLabel.text = post.text
+        cell.cellView.dateLabel.text = dateFormatter.stringFromDate(post.createdAt)
+        cell.cellView.commentCountLabel.text = "\(post.numberComments)"
         
         return cell
     }

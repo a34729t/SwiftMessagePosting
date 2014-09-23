@@ -12,6 +12,10 @@
 		03186AB819B819630046AF93 /* MPPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03186AB719B819630046AF93 /* MPPost.swift */; };
 		03186ABB19B829550046AF93 /* MPComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03186ABA19B829550046AF93 /* MPComment.swift */; };
 		03186ABD19BD65AD0046AF93 /* MPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03186ABC19BD65AD0046AF93 /* MPConstants.swift */; };
+		0318C99A19D0E24600575261 /* PostTableViewCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0318C99919D0E24600575261 /* PostTableViewCellView.xib */; };
+		0318C9A019D0ED3200575261 /* PostDetailTableViewCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0318C99F19D0ED3200575261 /* PostDetailTableViewCellView.xib */; };
+		0318C9A219D1408900575261 /* PostDetailCommentTableViewCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0318C9A119D1408900575261 /* PostDetailCommentTableViewCellView.xib */; };
+		0318C9A419D140A100575261 /* PostDetailCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0318C9A319D140A100575261 /* PostDetailCommentTableViewCell.swift */; };
 		03280DD719A1842500A67AC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280DD619A1842500A67AC0 /* AppDelegate.swift */; };
 		03280DDA19A1842600A67AC0 /* MessagePosting.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03280DD819A1842600A67AC0 /* MessagePosting.xcdatamodeld */; };
 		03280DDF19A1842600A67AC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03280DDD19A1842600A67AC0 /* Main.storyboard */; };
@@ -64,6 +68,10 @@
 		03186AB719B819630046AF93 /* MPPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPost.swift; sourceTree = "<group>"; };
 		03186ABA19B829550046AF93 /* MPComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPComment.swift; sourceTree = "<group>"; };
 		03186ABC19BD65AD0046AF93 /* MPConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPConstants.swift; sourceTree = "<group>"; };
+		0318C99919D0E24600575261 /* PostTableViewCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCellView.xib; sourceTree = "<group>"; };
+		0318C99F19D0ED3200575261 /* PostDetailTableViewCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostDetailTableViewCellView.xib; sourceTree = "<group>"; };
+		0318C9A119D1408900575261 /* PostDetailCommentTableViewCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostDetailCommentTableViewCellView.xib; sourceTree = "<group>"; };
+		0318C9A319D140A100575261 /* PostDetailCommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailCommentTableViewCell.swift; sourceTree = "<group>"; };
 		03280DD119A1842500A67AC0 /* MessagePosting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessagePosting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03280DD519A1842500A67AC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03280DD619A1842500A67AC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -236,9 +244,7 @@
 			children = (
 				03280DDD19A1842600A67AC0 /* Main.storyboard */,
 				03280DFC19A189CD00A67AC0 /* PostsTableViewController.swift */,
-				03280DFE19A1B47D00A67AC0 /* PostTableViewCell.swift */,
 				03CF1E5F19A90C8F009739F5 /* PostDetailTableViewController.swift */,
-				0346C5F419AD78AC00F86282 /* PostDetailTableViewCell.swift */,
 				0378B1D919AEDD3400658607 /* EditPostViewController.swift */,
 				033A641019CE568600E4F7ED /* Views */,
 				0318C99019CFA81400575261 /* Segues */,
@@ -251,6 +257,12 @@
 			children = (
 				0364970419CF72790059A88D /* ImprovedTextView.swift */,
 				0364970619CF72850059A88D /* ImprovedTextView.xib */,
+				03280DFE19A1B47D00A67AC0 /* PostTableViewCell.swift */,
+				0318C99919D0E24600575261 /* PostTableViewCellView.xib */,
+				0346C5F419AD78AC00F86282 /* PostDetailTableViewCell.swift */,
+				0318C99F19D0ED3200575261 /* PostDetailTableViewCellView.xib */,
+				0318C9A319D140A100575261 /* PostDetailCommentTableViewCell.swift */,
+				0318C9A119D1408900575261 /* PostDetailCommentTableViewCellView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -387,9 +399,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				036F7C3E19B3EDBF001C31B1 /* LICENSE.txt in Resources */,
+				0318C9A019D0ED3200575261 /* PostDetailTableViewCellView.xib in Resources */,
+				0318C99A19D0E24600575261 /* PostTableViewCellView.xib in Resources */,
 				03280DDF19A1842600A67AC0 /* Main.storyboard in Resources */,
 				03280DE119A1842600A67AC0 /* Images.xcassets in Resources */,
 				0364970719CF72850059A88D /* ImprovedTextView.xib in Resources */,
+				0318C9A219D1408900575261 /* PostDetailCommentTableViewCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +433,7 @@
 				03280DFD19A189CD00A67AC0 /* PostsTableViewController.swift in Sources */,
 				03186AB819B819630046AF93 /* MPPost.swift in Sources */,
 				03186ABB19B829550046AF93 /* MPComment.swift in Sources */,
+				0318C9A419D140A100575261 /* PostDetailCommentTableViewCell.swift in Sources */,
 				03C73DF519B505F6003AA10E /* Analytics.swift in Sources */,
 				03280DFF19A1B47D00A67AC0 /* PostTableViewCell.swift in Sources */,
 				033A641219CE590000E4F7ED /* NibDesignable.swift in Sources */,

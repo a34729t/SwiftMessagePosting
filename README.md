@@ -1,7 +1,5 @@
 ### TODO
 
-* Xib for posttableviewcell
-* Xib for postdetailtableviewcell
 * Make UI suck less in general
 
 Future:
@@ -16,6 +14,7 @@ Networking:
 
 ### DONE
 
+- Xib for all tableviewcells
 - Need some sort of custom UITextView with proper text alignment, size, placeholder text, etc.
 - Rename ViewPostTVC to PostDetailTVC (Swift cannot do refactoring via Xcode yet)
 - When typing a comment, does not always immediately show in ViewPostTVC

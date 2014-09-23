@@ -19,57 +19,20 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y1l-xX-2wL" id="RpL-CG-oyn">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014-08-24 at 7:11 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8M-yi-8HU">
-                                            <rect key="frame" x="8" y="34" width="280" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="280" id="DlG-fi-Bdv"/>
-                                                <constraint firstAttribute="height" constant="21" id="E7u-de-2zl"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insert random post here that talks about interesting things." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBD-9v-rH6">
-                                            <rect key="frame" x="8" y="8" width="584" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CommentIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mny-eQ-mg3">
-                                            <rect key="frame" x="563" y="37" width="29" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="29" id="NEl-cg-eA2"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhe-3f-b06">
-                                            <rect key="frame" x="462" y="37" width="99" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="99" id="s57-os-Ojc"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="88A-4a-gt1" customClass="PostTableViewCellView" customModule="MessagePosting" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="vBD-9v-rH6" firstAttribute="leading" secondItem="RpL-CG-oyn" secondAttribute="leadingMargin" id="091-Ii-nP9"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="z8M-yi-8HU" secondAttribute="bottom" constant="2.5" id="F0N-je-H5P"/>
-                                        <constraint firstItem="jhe-3f-b06" firstAttribute="bottom" secondItem="mny-eQ-mg3" secondAttribute="bottom" id="GvM-G6-2wm"/>
-                                        <constraint firstItem="z8M-yi-8HU" firstAttribute="leading" secondItem="vBD-9v-rH6" secondAttribute="leading" id="IM5-UR-n4h"/>
-                                        <constraint firstItem="mny-eQ-mg3" firstAttribute="trailing" secondItem="RpL-CG-oyn" secondAttribute="trailingMargin" id="Jgg-w2-q3O"/>
-                                        <constraint firstItem="z8M-yi-8HU" firstAttribute="top" secondItem="vBD-9v-rH6" secondAttribute="bottom" constant="5" id="Mdt-QL-apH"/>
-                                        <constraint firstItem="jhe-3f-b06" firstAttribute="top" secondItem="vBD-9v-rH6" secondAttribute="bottom" constant="8" symbolic="YES" id="Uhg-Rb-TT6"/>
-                                        <constraint firstItem="vBD-9v-rH6" firstAttribute="trailing" secondItem="mny-eQ-mg3" secondAttribute="trailing" id="ajb-SG-NAu"/>
-                                        <constraint firstItem="mny-eQ-mg3" firstAttribute="top" secondItem="jhe-3f-b06" secondAttribute="top" id="bRt-kH-f1h"/>
-                                        <constraint firstItem="mny-eQ-mg3" firstAttribute="leading" secondItem="jhe-3f-b06" secondAttribute="trailing" constant="2" id="eOd-5t-5Iq"/>
-                                        <constraint firstItem="vBD-9v-rH6" firstAttribute="top" secondItem="RpL-CG-oyn" secondAttribute="topMargin" id="hE7-1T-cPq"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="jhe-3f-b06" secondAttribute="bottom" constant="-0.5" id="rRi-G9-WdS"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="88A-4a-gt1" secondAttribute="trailing" constant="-8" id="JyN-2O-beS"/>
+                                        <constraint firstItem="88A-4a-gt1" firstAttribute="leading" secondItem="RpL-CG-oyn" secondAttribute="leadingMargin" constant="-8" id="nKe-Nb-Xj5"/>
+                                        <constraint firstItem="88A-4a-gt1" firstAttribute="top" secondItem="RpL-CG-oyn" secondAttribute="topMargin" constant="-8" id="qOf-3G-yxX"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="88A-4a-gt1" secondAttribute="bottom" constant="-8" id="r1d-jW-1EE"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="commentCountLabel" destination="jhe-3f-b06" id="ag5-nG-9aF"/>
-                                    <outlet property="dateLabel" destination="z8M-yi-8HU" id="IkM-7C-OaR"/>
-                                    <outlet property="postTextLabel" destination="vBD-9v-rH6" id="BV4-S4-nYG"/>
+                                    <outlet property="cellView" destination="88A-4a-gt1" id="QAA-n9-GCM"/>
                                     <segue destination="YwK-8a-ZO5" kind="show" identifier="select" id="5Uv-qs-nk4"/>
                                 </connections>
                             </tableViewCell>
@@ -150,29 +113,42 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5bD-in-jX2" id="Snn-Jt-SX5">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insert random post here that talks about interesting things." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inT-NR-qZJ">
-                                            <rect key="frame" x="8" y="11" width="584" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASp-xd-uuV" customClass="PostDetailTableViewCellView" customModule="MessagePosting" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="inT-NR-qZJ" firstAttribute="top" secondItem="Snn-Jt-SX5" secondAttribute="topMargin" constant="3" id="4Oc-6a-qWL"/>
-                                        <constraint firstItem="inT-NR-qZJ" firstAttribute="trailing" secondItem="Snn-Jt-SX5" secondAttribute="trailingMargin" id="aTU-0T-zZz"/>
-                                        <constraint firstItem="inT-NR-qZJ" firstAttribute="leading" secondItem="Snn-Jt-SX5" secondAttribute="leadingMargin" id="gPQ-Dh-nOY"/>
-                                        <constraint firstItem="inT-NR-qZJ" firstAttribute="centerY" secondItem="Snn-Jt-SX5" secondAttribute="centerY" id="kva-D4-n92"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ASp-xd-uuV" secondAttribute="bottom" constant="-8" id="5df-P7-Pxm"/>
+                                        <constraint firstItem="ASp-xd-uuV" firstAttribute="leading" secondItem="Snn-Jt-SX5" secondAttribute="leadingMargin" constant="-8" id="6Ja-Nm-fLz"/>
+                                        <constraint firstItem="ASp-xd-uuV" firstAttribute="top" secondItem="Snn-Jt-SX5" secondAttribute="topMargin" constant="-8" id="DKS-r4-IPR"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ASp-xd-uuV" secondAttribute="trailing" constant="-8" id="iIA-uq-l7T"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="postTextLabel" destination="inT-NR-qZJ" id="o4c-hC-O7D"/>
+                                    <outlet property="cellView" destination="ASp-xd-uuV" id="jD1-l1-0mz"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" id="hVN-ig-Kah" customClass="PostDetailTableViewCell" customModule="MessagePosting" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" id="hVN-ig-Kah" customClass="PostDetailCommentTableViewCell" customModule="MessagePosting" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hVN-ig-Kah" id="Wn5-Kw-IQH">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFB-6K-4ek" customClass="PostDetailCommentTableViewCellView" customModule="MessagePosting" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="iFB-6K-4ek" secondAttribute="bottom" constant="-8" id="MwF-jb-fnC"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="iFB-6K-4ek" secondAttribute="trailing" constant="-8" id="XRx-Oe-ZH4"/>
+                                        <constraint firstItem="iFB-6K-4ek" firstAttribute="leading" secondItem="Wn5-Kw-IQH" secondAttribute="leadingMargin" constant="-8" id="oh9-Eg-ZOm"/>
+                                        <constraint firstItem="iFB-6K-4ek" firstAttribute="top" secondItem="Wn5-Kw-IQH" secondAttribute="topMargin" constant="-8" id="sec-Qh-Ijr"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cellView" destination="iFB-6K-4ek" id="mEV-qr-q6b"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -254,9 +230,6 @@
             <point key="canvasLocation" x="-728" y="1126"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="CommentIcon" width="50" height="50"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="i5H-7H-CSq"/>
         <segue reference="EV7-EI-hcd"/>
