@@ -44,4 +44,11 @@ Networking:
 
 ### NOTE
 
-Using Morten Bogh's NibDesignable class to do live rendering on UIElements. Super unstable and un-debuggable, until Apple decides to fix one of the major Xcode features they advertised.
+1) I am using Morten Bogh's NibDesignable class to do live rendering on UIElements. Live rendering isn't instant though; often one needs to click on another file (in the same tab) to make changes render. Clicking on another tab doesn't always seem to do the trick.
+
+2) To get UITableViewCells to link to Xibs, I do the following:
+
+* Create a subclass of UITableViewCell, and make the prototype cell in storyboard be of this type
+* Create a subclass of IBDesignable, and add a UIView to the cell of this type
+* Put both of these classes in the same file for convenience's sake
+* Make the file's owner of the Xib be the subclass of IBDesignable
