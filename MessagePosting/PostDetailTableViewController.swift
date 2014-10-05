@@ -19,12 +19,16 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
     let postViewCellIdentifier = "PostViewCell"
     let commentCellIdentifier = "CommentCell"
     
+    let dateFormatter = NSDateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         fetchedResultController = getFetchedResultController()
         fetchedResultController.delegate = self
         fetchedResultController.performFetch(nil)
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd 'at' HH:mm"
         
         // i don't know why this weird .self construction is needed but it is
         tableView.estimatedRowHeight=44.0
@@ -33,6 +37,9 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
         self.refreshControl = UIRefreshControl()
         self.refreshControl!.addTarget(self, action: Selector("pullToRefresh"), forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(self.refreshControl!)
+        
+        // No empty cells at bottom
+        self.tableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,6 +101,7 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
             let cell = tableView.dequeueReusableCellWithIdentifier(postViewCellIdentifier, forIndexPath: indexPath) as PostDetailTableViewCell
             if let realPost:Post = self.post {
                 cell.cellView.postTextLabel.text = realPost.text
+                cell.cellView.dateLabel.text = dateFormatter.stringFromDate(realPost.createdAt)
             }
             return cell
         }

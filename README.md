@@ -1,9 +1,10 @@
 ### TODO
 
-* Make UI suck less in general
+* Add a disappearing go to bottom/top of comments indicator (when > 20 comments)
+* Add a comment limit for a post (1000!)
+* Add a NUX/help button on menu
 
 Future:
-* Comment limit is 1000 right now... pagination/automatic move to bottm/next 100?
 * What should go in the menu?
 * Investigate finding/writing PFObject category that is NSCoding/CoreData compatible.
 
@@ -14,6 +15,8 @@ Networking:
 
 ### DONE
 
+- Make UI for post details suck less
+- No empty cells in tableview
 - Xib for all tableviewcells
 - Need some sort of custom UITextView with proper text alignment, size, placeholder text, etc.
 - Rename ViewPostTVC to PostDetailTVC (Swift cannot do refactoring via Xcode yet)

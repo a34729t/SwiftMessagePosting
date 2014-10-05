@@ -37,6 +37,9 @@ class PostsTableViewController: UITableViewController, NSFetchedResultsControlle
         self.refreshControl = UIRefreshControl()
         self.refreshControl!.addTarget(self, action: Selector("pullToRefresh"), forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(self.refreshControl!)
+        
+        // No empty cells at bottom
+        self.tableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {
