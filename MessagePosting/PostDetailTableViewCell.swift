@@ -29,6 +29,7 @@ class PostDetailTableViewCell: UITableViewCell {
 class PostDetailTableViewCellView: NibDesignable {
     
     @IBOutlet weak var postTextLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
 //    let lightGreyColor:UIColor = UIColor(white: 247/255, alpha: 1)
     

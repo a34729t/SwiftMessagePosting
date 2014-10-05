@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -7,27 +7,40 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostDetailTableViewCellView" customModule="MessagePosting" customModuleProvider="target">
             <connections>
-                <outlet property="postTextLabel" destination="gFb-RM-u05" id="99t-2a-FQt"/>
+                <outlet property="dateLabel" destination="tRf-Gd-aXp" id="gAL-ap-53i"/>
+                <outlet property="postTextLabel" destination="lsd-xK-QNk" id="axv-sO-Yrf"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="601" height="49"/>
+            <rect key="frame" x="0.0" y="0.0" width="592" height="76"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insert random post here that talks about interesting things." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFb-RM-u05">
-                    <rect key="frame" x="8" y="8" width="585" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014-08-24 at 7:11 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRf-Gd-aXp">
+                    <rect key="frame" x="12" y="51" width="280" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="0Nq-Jq-4n7"/>
+                        <constraint firstAttribute="width" constant="280" id="qTV-Ag-Qd6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insert random post here that talks about interesting things." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsd-xK-QNk">
+                    <rect key="frame" x="8" y="8" width="584" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="gFb-RM-u05" secondAttribute="bottom" constant="20" id="4Pr-zM-WM6"/>
-                <constraint firstItem="gFb-RM-u05" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="RgG-rw-0dA"/>
-                <constraint firstItem="gFb-RM-u05" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="nV9-oz-hQN"/>
-                <constraint firstItem="gFb-RM-u05" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="uKo-Zd-oEe"/>
+                <constraint firstItem="tRf-Gd-aXp" firstAttribute="top" secondItem="lsd-xK-QNk" secondAttribute="bottom" constant="9" id="55L-gv-r76"/>
+                <constraint firstItem="lsd-xK-QNk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="9tI-as-ezw"/>
+                <constraint firstItem="lsd-xK-QNk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="b1O-96-haa"/>
+                <constraint firstItem="tRf-Gd-aXp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="flc-0L-Ld3"/>
+                <constraint firstAttribute="trailing" secondItem="lsd-xK-QNk" secondAttribute="trailing" id="oGS-37-yVp"/>
+                <constraint firstAttribute="bottom" secondItem="tRf-Gd-aXp" secondAttribute="bottom" constant="4" id="zPO-6A-fNa"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

@@ -84,6 +84,28 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
         }
     }
     
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        switch section {
+        case 1:
+            
+            let separatorFrame = CGRectMake(0, 0, tableView.frame.width, 1);
+            var view = UIView(frame: separatorFrame)
+            view.backgroundColor = UIColor.blackColor()
+            return view
+        default:
+            return UIView() // blank view
+        }
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+            case 1:
+                return 1
+            default:
+                return 0
+        }
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 1:
