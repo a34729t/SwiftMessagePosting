@@ -1,10 +1,13 @@
 ### TODO
 
-* Add a disappearing go to bottom/top of comments indicator (when > 20 comments)
-* Add a comment limit for a post (1000!)
-* Add a NUX/help button on menu
+- Add goto top/bottom buttons for post detail
+-- Make it work properly
+
+* Add a comment limit for a post (1000, test with 100 comments for now!)
+* Add hashtags to posts
 
 Future:
+* Add a NUX/help button on menu -> link to nux flow
 * What should go in the menu?
 * Investigate finding/writing PFObject category that is NSCoding/CoreData compatible.
 
@@ -14,6 +17,11 @@ Networking:
 * Make sure to attempt content load before page loads
 
 ### DONE
+
+- Add goto top/bottom buttons for post detail
+-- programmatic autolayout constraints
+-- create a carat icons
+-- make the top/bottom icons only appear when > 20 comments
 
 - Make UI for post details suck less
 - No empty cells in tableview

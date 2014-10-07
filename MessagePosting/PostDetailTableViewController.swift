@@ -19,6 +19,10 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
     let postViewCellIdentifier = "PostViewCell"
     let commentCellIdentifier = "CommentCell"
     
+    var gotoButton = UIButton()
+    
+    let minRowsToShowGotoButtons = 18
+    
     let dateFormatter = NSDateFormatter()
     
     override func viewDidLoad() {
@@ -40,17 +44,50 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
         
         // No empty cells at bottom
         self.tableView.tableFooterView = UIView()
+        
+        // Go to top/bottom button?
+        self.maybeShowGotoButtons()
+        self.gotoButton.addTarget(self, action: "gotoButtonPressed:", forControlEvents: .TouchUpInside)
     }
-
+    
+    override func viewWillAppear(animated: Bool) {
+        tableView.reloadData()
+        
+        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
+        let navBarHeight = self.navigationController!.navigationBar.frame.size.height
+//        updateButton(self.goToTopButton, horizontalMargin: 0, verticalMargin: 20 + navBarHeight + statusBarHeight, top: true)
+        updateButton(self.gotoButton, horizontalMargin: -10, verticalMargin: -30, top: false)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.gotoButton.removeFromSuperview()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        tableView.reloadData()
+    // MARK: - UIScrollView Delegates (enable/disable goto button for navigating posts with lots of comments)
+    
+    override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        UIView.animateWithDuration(0.1, animations: {
+            self.gotoButton.alpha = 0.5
+        })
     }
-
+    
+    override func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        UIView.animateWithDuration(0.2, animations: {
+            self.gotoButton.alpha = 1.0
+            self.maybeShowGotoButtons()
+        })
+    }
+    
+    override func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+        // This is used for the programmatic scroll top/bottom when clicking buttons
+        self.maybeShowGotoButtons()
+    }
+    
     // MARK: - Actions
     
     func pullToRefresh() {
@@ -59,6 +96,77 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
             MPComment.getCommentsForPost(realPost)
             self.refreshControl!.endRefreshing()
         }
+    }
+    
+    func gotoButtonPressed(sender: UIButton!) {
+        if let realPost = post {
+            if realPost.numberComments > 0 {
+                if self.atBottom() {
+                    let indexPath:NSIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+                    self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+                } else {
+                    let indexPath:NSIndexPath = NSIndexPath(forRow: realPost.numberComments - 1, inSection: 1)
+                    self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+                }
+            }
+        }
+    }
+    
+    // MARK: - UI Helpers
+    
+    func updateButton(button: UIButton, horizontalMargin: CGFloat, verticalMargin: CGFloat, top: Bool) {
+        // Add the button to the superview and position it on the right side, at top or bottom
+        var superview = self.navigationController!.view
+        
+        superview.addSubview(button)
+        button.setTranslatesAutoresizingMaskIntoConstraints(false)
+        var viewsDict = Dictionary <String, UIView>()
+        viewsDict["button"] = button
+        
+        let x = NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.TrailingMargin, relatedBy: NSLayoutRelation.Equal, toItem: superview, attribute: NSLayoutAttribute.TrailingMargin, multiplier: 1, constant: horizontalMargin)
+        
+        var y:NSLayoutConstraint?
+        if top {
+            y = NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.TopMargin, relatedBy: NSLayoutRelation.Equal, toItem: superview, attribute: NSLayoutAttribute.TopMargin, multiplier: 1, constant: verticalMargin)
+        } else {
+            y = NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.BottomMargin, relatedBy: NSLayoutRelation.Equal, toItem: superview, attribute: NSLayoutAttribute.BottomMargin, multiplier: 1, constant: verticalMargin)
+        }
+        
+        let size:CGFloat = 20
+        let width = NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: size)
+        let height = NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: size)
+        
+        superview.addConstraints([x, y!, width, height])
+    }
+    
+    func maybeShowGotoButtons() {
+        let yOffset:CGFloat = self.tableView.contentOffset.y
+        
+        if (self.post!.numberComments < minRowsToShowGotoButtons) {
+            // Hide and disable buttons
+            self.gotoButton.hidden = true
+            self.gotoButton.enabled = false
+        } else {
+            // Show buttons, depending on content offset
+            
+            if self.atBottom() {
+                self.gotoButton.setImage(UIImage(named: "gotoTopIcon"), forState: .Normal)
+            } else {
+                self.gotoButton.setImage(UIImage(named: "gotoBottomIcon"), forState: .Normal)
+            }
+            
+            // And enable
+            self.gotoButton.hidden = false
+            self.gotoButton.enabled = true
+        }
+    }
+    
+    func atBottom() -> Bool {
+        // TODO: This doesn't work
+        let offset:CGPoint = self.tableView.contentOffset
+        let height:CGFloat = self.tableView.frame.height
+        println("atBottom offset.y=\(offset.y) height=\(height)")
+        return offset.y > (height/3.0)
     }
     
     // MARK: - Table view data source
@@ -140,6 +248,7 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
     
     func controllerDidChangeContent(controller: NSFetchedResultsController!) {
         tableView.reloadData()
+        self.maybeShowGotoButtons()
     }
     
     func getFetchedResultController() -> NSFetchedResultsController {
