@@ -88,6 +88,10 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
         self.maybeShowGotoButtons()
     }
     
+    override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        self.maybeShowGotoButtons()
+    }
+    
     // MARK: - Actions
     
     func pullToRefresh() {
@@ -162,11 +166,19 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
     }
     
     func atBottom() -> Bool {
-        // TODO: This doesn't work
-        let offset:CGPoint = self.tableView.contentOffset
-        let height:CGFloat = self.tableView.frame.height
-        println("atBottom offset.y=\(offset.y) height=\(height)")
-        return offset.y > (height/3.0)
+        let height = self.tableView.contentSize.height - self.tableView.frame.size.height
+
+        if self.tableView.contentOffset.y < 10 {
+            //reach top
+            return false
+        }
+        else if self.tableView.contentOffset.y < height/2.0 {
+            // halfway?
+            return false
+        }
+        else {
+            return true
+        }
     }
     
     // MARK: - Table view data source

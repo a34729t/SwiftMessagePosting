@@ -1,8 +1,7 @@
 ### TODO
 
-- Add goto top/bottom buttons for post detail
--- Make it work properly
-
+* Use bubbles for content
+* Investigate bottom toolbar for uinavigation controller with keyboard + goto top/bottom capability.
 * Add a comment limit for a post (1000, test with 100 comments for now!)
 * Add hashtags to posts
 
@@ -22,7 +21,6 @@ Networking:
 -- programmatic autolayout constraints
 -- create a carat icons
 -- make the top/bottom icons only appear when > 20 comments
-
 - Make UI for post details suck less
 - No empty cells in tableview
 - Xib for all tableviewcells
